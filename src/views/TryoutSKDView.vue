@@ -28,7 +28,7 @@
       <div class="col-12">
         <div class="row">
           <router-link
-            to="/oke"
+            :to="'/tryoutskd/detail/' + tskd.eid"
             class="col-xxl-3 col-lg-4 col-md-6 mb-15"
             v-for="tskd in tryoutskd"
             :key="tskd.eid"

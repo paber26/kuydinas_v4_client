@@ -36,7 +36,7 @@
   </div>
 
   <div v-else>
-    <GoogleLogin :callback="callback" prompt />
+    <GoogleLogin :callback="callback" prompt auto-login />
   </div>
 </template>
 
@@ -54,10 +54,8 @@ export default {
       expanded: false,
       user: null,
       callback: (respoonse) => {
-        console.log("loged in");
         this.loggedIn = true;
         this.user = decodeCredential(respoonse.credential);
-        console.log(this.user);
       },
     };
   },
@@ -78,11 +76,9 @@ export default {
   },
 
   // mounted() {
-  //   console.log(this.currentRouteName);
   // },
   // computed: {
   //   currentRouteName() {
-  //     console.log(this.$route.name);
   //     return this.$route.name;
   //   },
   // },

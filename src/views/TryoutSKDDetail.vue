@@ -1,0 +1,167 @@
+<template>
+  <div class="contents" :class="expanded ? 'expanded' : ''">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="breadcrumb-main">
+            <h4 class="text-capitalize breadcrumb-title">
+              Detail Try Out SKD CPNS
+            </h4>
+            <div class="breadcrumb-action justify-content-center flex-wrap">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <router-link to="/"
+                      ><i class="uil uil-estate"></i>Home</router-link
+                    >
+                  </li>
+                  <li class="breadcrumb-item">
+                    <router-link to="/tryoutskd">Try Out SKD</router-link>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Detail
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="products mb-30">
+        <div class="container-fluid">
+          <!-- Start: Card -->
+          <div class="card product-details h-100 border-0">
+            <div class="product-item d-flex p-sm-50 p-20">
+              <div class="row">
+                <div class="col-lg-5">
+                  <!-- Start: Product Slider -->
+                  <div class="product-item__image">
+                    <div
+                      class="wrap-gallery-article carousel slide carousel-fade"
+                      id="carouselExampleCaptions"
+                      data-bs-ride="carousel"
+                    >
+                      <div>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img
+                              class="img-fluid d-flex bg-opacity-primary"
+                              src="https://edukompas.com/assets/uploads/product/_large/book_20230324072410-ee44694252c4d974f514d16c24e5ef47-641d501a4edf3.png"
+                              alt="Card image cap"
+                              title=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End: Product Slider -->
+                </div>
+                <div class="col-lg-7">
+                  <!-- Start: Product Details -->
+                  <div class="b-normal-b mb-25 pb-sm-35 pb-15 mt-lg-0 mt-15">
+                    <div class="product-item__body">
+                      <!-- Start: Product Title -->
+                      <div class="product-item__title">
+                        <a href="#">
+                          <h1 class="card-title">
+                            {{ tryoutskd.title }}
+                          </h1>
+                        </a>
+                      </div>
+                      <!-- End: Product Title -->
+                      <div class="product-item__content text-capitalize">
+                        <!-- Start: Product Brand -->
+                        <span class="product-details-brandName"
+                          >Sudah diikuti:<span>100 peserta</span></span
+                        >
+                        <span class="product-desc-price">
+                          <span class="uil uil-pricetag-alt"></span
+                          >{{ tryoutskd.harga }} koin</span
+                        >
+                        <!-- End: Product Brand -->
+                        <!-- Start: Product Description -->
+                        <p class="product-deatils-pera">
+                          Keyakinanmu pada dirimu sendiri adalah bahan bakar
+                          yang tak tergantikan. Dengan latihan yang gigih, tidak
+                          ada yang tak mungkin. Teruslah maju, karena
+                          keyakinanmu adalah kunci menuju keberhasilan yang
+                          gemilang.
+                        </p>
+                        <!-- End: Product Description -->
+
+                        <!-- Start: Product Stock -->
+                        <div class="product-details__availability">
+                          <div class="title">
+                            <p>Jumlah</p>
+                            <span class="stock"
+                              >: {{ tryoutskd.total }} soal</span
+                            >
+                          </div>
+                          <div class="title">
+                            <p>TWK</p>
+                            <span class="free">: {{ tryoutskd.twk }} soal</span>
+                          </div>
+                          <div class="title">
+                            <p>TIU</p>
+                            <span class="free">: {{ tryoutskd.tiu }} soal</span>
+                          </div>
+                          <div class="title">
+                            <p>TKP</p>
+                            <span class="free">: {{ tryoutskd.tkp }} soal</span>
+                          </div>
+                        </div>
+                        <!-- End: Product Stock -->
+
+                        <!-- Start: Product Selections -->
+                        <div
+                          class="product-item__button mt-lg-30 mt-sm-25 mt-20 d-flex flex-wrap"
+                        >
+                          <div
+                            class="d-flex flex-wrap product-item__action align-items-center"
+                          >
+                            <button
+                              class="btn btn-primary btn-default btn-squared border-0 me-10 my-sm-0 my-2"
+                            >
+                              Ikuti
+                            </button>
+                          </div>
+                        </div>
+                        <!-- End: Product Selections -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End: Product Details -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End: Card -->
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+  props: ["eid", "expanded"],
+  data() {
+    return {
+      tryoutskd: [],
+    };
+  },
+  mounted() {
+    console.log(this.eid);
+    axios
+      .get(this.http + "/api/tryoutskd/getdetail/" + this.eid)
+      .then((response) => {
+        this.tryoutskd = response.data;
+        console.log(this.tryoutskd);
+      });
+  },
+};
+</script>
