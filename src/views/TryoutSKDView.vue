@@ -24,6 +24,93 @@
           </div>
         </div>
       </div>
+
+      <div class="col-12">
+        <div class="row">
+          <div
+            class="col-xxl-3 col-lg-4 col-md-6 mb-25"
+            v-for="tskd in tryoutskd"
+            :key="tskd.eid"
+          >
+            <div class="feature-cards feature-card--1">
+              <figure class="feather-cards__figure">
+                <figcaption>
+                  <div class="feature-cards__top">
+                    <span></span>
+                    <span class="uil uil-pricetag-alt"
+                      >{{ tskd.harga }} koin</span
+                    >
+                  </div>
+                  <h5>{{ tskd.title }}</h5>
+                  <span class="text-xs">
+                    Kerjakan {{ tskd.total }} soal, pengerjaan
+                    {{ tskd.time }} menit
+                  </span>
+                  <div class="feature-cards__bottom">
+                    <div class="feedbackSection">
+                      <div class="author">
+                        <img
+                          class="rounded-circle"
+                          src="img/svg/genetic-data-com.svg"
+                          alt=""
+                        />
+                        <span>Belum diikuti</span>
+                      </div>
+                      <div class="feedback">
+                        <span class="uil uil-chat-bubble-user">120</span>
+                      </div>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="col-xxl-3 col-lg-4 col-md-6 mb-25">
+            <div class="feature-cards feature-card--1">
+              <figure class="feather-cards__figure">
+                <img src="img/blog-single4.png" alt="" />
+                <figcaption>
+                  <div class="feature-cards__top">
+                    <span>Web Development</span><span>01 July 2023 </span>
+                  </div>
+                  <h5>Technology Change the World</h5>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printer took a
+                    galley of type and scrambled
+                  </p>
+                  <div class="feature-cards__bottom">
+                    <div class="feedbackSection">
+                      <div class="author">
+                        <img
+                          class="rounded-circle"
+                          src="img/blog-author.jpg"
+                          alt=""
+                        />
+                        <span>Burns Marks</span>
+                      </div>
+                      <div class="feedback">
+                        <span class="like"
+                          ><img
+                            src="img/svg/heart.svg"
+                            alt="heart"
+                            class="svg"
+                          />
+                          70</span
+                        >
+                        <span class="view"
+                          ><img src="img/svg/eye.svg" alt="eye" class="svg" />
+                          120</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-12 mb-30">
           <div class="support-ticket-system support-ticket-system--search">
