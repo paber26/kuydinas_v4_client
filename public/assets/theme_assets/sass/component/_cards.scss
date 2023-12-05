@@ -29,7 +29,7 @@
     h4,
     h5,
     h6 {
-     @include rfs(18px);
+      @include rfs(18px);
       font-weight: 600;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -109,7 +109,7 @@
 
         &.active {
           box-shadow: 0 0;
-          color:var(--color-white);
+          color: var(--color-white);
           background-color: var(--color-primary);
 
           &:hover {
@@ -149,12 +149,13 @@
       i,
       span,
       svg {
-       @include rfs(18px);
+        @include rfs(18px);
         color: var(--color-light);
         width: 18px;
-        height:18px;
+        height: 18px;
       }
-      img{
+
+      img {
         width: 18px;
       }
     }
@@ -191,8 +192,9 @@
 
         a {
           padding: 4px 12px;
-          background-color:transparent;
+          background-color: transparent;
           border-radius: 6px;
+
           @include ssm {
             padding: 2px 7px;
           }
@@ -200,7 +202,7 @@
           &.active {
             font-weight: 500;
             background-color: rgba(var(--color-primary-rgba), 0.10);
-            color:var(--color-primary);
+            color: var(--color-primary);
           }
         }
       }
@@ -209,6 +211,7 @@
     .card-tab+.dropdown,
     .card-tab-links+.dropdown {
       margin-left: 13px;
+
       @include ssm {
         margin: 10px 0 -6px;
       }
@@ -228,7 +231,7 @@
 
       svg,
       i {
-        color:var(--color-lighten);
+        color: var(--color-lighten);
       }
     }
   }
@@ -241,7 +244,7 @@
     border: 0 none;
 
     .card-header {
-      border:1px solid var(--border-color);
+      border: 1px solid var(--border-color);
     }
   }
 
@@ -259,8 +262,9 @@
   &.card-md {
     .card-header {
       padding: 18px 25px;
-      .card-extra{
-        @include xs{
+
+      .card-extra {
+        @include xs {
           margin-top: 8px;
         }
       }
@@ -270,8 +274,9 @@
   &.card-sm {
     .card-header {
       padding: 12px 15px;
-      .card-extra{
-        @include xs{
+
+      .card-extra {
+        @include xs {
           margin-top: 8px;
         }
       }
@@ -279,7 +284,7 @@
 
   }
 
-  .card-header{
+  .card-header {
     padding: 0 25px;
   }
 }
@@ -318,26 +323,31 @@
   }
 }
 
-.card{
-  &.cashflowChart4{
+.card {
+  &.cashflowChart4 {
     .card-header {
       min-height: auto;
       margin-top: 10px;
-      .card-tab-links li{
+
+      .card-tab-links li {
         margin: 5px 0;
       }
     }
   }
-  .chartjs-tooltip{
-    .chartjs-tooltip-key{
+
+  .chartjs-tooltip {
+    .chartjs-tooltip-key {
       order: 1;
     }
-    .data-label{
+
+    .data-label {
       order: 2;
     }
-    .chart-data{
+
+    .chart-data {
       order: 3;
-      &:after{
+
+      &:after {
         content: 'k';
       }
     }
@@ -369,6 +379,7 @@
       border-top: 0 none;
       border-bottom: 1px solid var(--border-light);
       border-left: 1px solid var(--border-light);
+
       &:first-child {
         border-left: 0;
       }
@@ -406,7 +417,7 @@
     }
 
     h6 {
-      color:var(--color-white);
+      color: var(--color-white);
     }
 
     .dropdown-toggle {
@@ -429,7 +440,7 @@
         margin-left: 6px;
         margin-right: 0;
         font-size: 10px;
-        color:var(--color-white);
+        color: var(--color-white);
       }
     }
   }
@@ -525,13 +536,13 @@
 
       .progress-upword {
         strong {
-         color:var(--color-success);
+          color: var(--color-success);
         }
       }
 
       .progress-downword {
         strong {
-          color:var(--color-danger);
+          color: var(--color-danger);
         }
       }
     }
@@ -553,9 +564,9 @@
 .feature-cards {
   background: var(--color-white);
   border-radius: 10px;
-  margin-bottom:0;
+  margin-bottom: 0;
 
-  figure{
+  figure {
     margin-bottom: 0;
   }
 
@@ -582,7 +593,7 @@
     padding: 25px;
 
     h4 {
-      margin:0 0 10px;
+      margin: 0 0 10px;
     }
 
     p {
@@ -594,7 +605,7 @@
 
     button {
       background: rgba(var(--color-primary-rgba), 0.082);
-      color:var(--color-primary);
+      color: var(--color-primary);
       @include ofs(15px, null, 600);
       height: 48px;
       @extend .content-center;
@@ -634,9 +645,10 @@
         color: rgb(173, 180, 210);
         display: inline-flex;
         align-items: center;
+
         img,
         svg {
-          margin:0 5px;
+          margin: 0 5px;
           color: rgb(134, 142, 174);
           width: 15px;
         }
@@ -648,24 +660,30 @@
 
 .feature-card--1 {
   figcaption {
-    padding: 21px 25px 25px 25px;
+    padding: 10px 25px 10px 25px;
+
     h5 {
-      margin: 18px 0 15px;
+      margin: 8px 0 8px;
     }
-    p{
+
+    p {
       margin-bottom: 17px;
     }
+
     .author,
-    .feedback{
+    .feedback {
       margin: 5px 0;
     }
-    .feedback{
+
+    .feedback {
       display: flex;
-      .like{
-        margin-right:5px;
+
+      .like {
+        margin-right: 5px;
       }
     }
-    .feedbackSection .author img{
+
+    .feedbackSection .author img {
       width: 35px;
       height: 35px;
     }
@@ -679,16 +697,17 @@
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  margin-bottom:0;
+  margin-bottom: 0;
   min-height: 253px;
-  >img{
+
+  >img {
     height: 253px;
   }
 
   figcaption {
     position: absolute;
-    bottom:0;
-    left:0;
+    bottom: 0;
+    left: 0;
     padding: 25px;
     background: rgba(39, 43, 65, 0.314);
     color: var(--color-white);
@@ -724,7 +743,7 @@
     h2 {
       color: var(--color-white);
       margin: 0 0 19px;
-     @include rfs(18px);
+      @include rfs(18px);
       font-weight: 600;
     }
 
@@ -741,7 +760,8 @@
   background: var(--color-white);
   padding: 25px;
   border-radius: 10px;
-  margin-bottom:0;
+  margin-bottom: 0;
+
   img,
   svg {
     width: 60px;
@@ -750,7 +770,7 @@
   figcaption {
     h2 {
       margin: 18px 0 10px;
-     @include rfs(18px);
+      @include rfs(18px);
       font-weight: 600;
       color: rgba(0, 0, 0, .85);
     }
@@ -765,7 +785,8 @@
       color: var(--color-primary);
       font-size: 15px;
       font-weight: 600;
-      &:hover{
+
+      &:hover {
         opacity: 0.7;
       }
     }
@@ -780,11 +801,12 @@
   padding: 25px;
   border-radius: 10px;
   text-align: center;
-  margin:0;
+  margin: 0;
   min-height: 324px;
   display: flex;
   flex-flow: column;
   justify-content: center;
+
   img,
   svg {
     height: 107px;
@@ -809,6 +831,7 @@
 
 
 .card__more-action {
+
   img,
   svg {
     width: 24px;
@@ -818,9 +841,10 @@
 }
 
 //Feature Card 5
-.feature-cards5{
+.feature-cards5 {
   background-color: var(--color-white);
-  .card__more-action{
+
+  .card__more-action {
     margin-top: -17px;
   }
 }
@@ -834,7 +858,7 @@
 
   .card-short {
     .card-short__title {
-     @include rfs(18px);
+      @include rfs(18px);
       font-weight: 500;
       margin-bottom: 18px;
       padding: 25px 25px 0;
@@ -846,7 +870,7 @@
     }
 
     .card-short__content {
-      padding:0 25px;
+      padding: 0 25px;
 
       p {
         color: var(--color-gray-x);
@@ -890,6 +914,7 @@
         }
 
         .more {
+
           img,
           svg {
             color: rgb(173, 180, 210);
@@ -912,14 +937,15 @@
 
     .card-short-checkbox {
       margin-right: 10px;
+
       .checkbox-text {
-       color:var(--color-success);
+        color: var(--color-success);
         text-transform: capitalize;
       }
 
       .custom-checkbox input[type="checkbox"]:checked+label:after {
-        border:1px solid var(--color-success);
-       background-color:var(--color-success);
+        border: 1px solid var(--color-success);
+        background-color: var(--color-success);
       }
     }
   }
@@ -934,7 +960,7 @@
     padding: 20px 25px 25px;
     border-radius: 10px;
 
-    .banner-card__action{
+    .banner-card__action {
       margin-top: -23px;
     }
 
@@ -990,17 +1016,19 @@
       flex-wrap: wrap;
       margin: -5px 0;
 
-      .card-author{
+      .card-author {
         display: flex;
         align-items: center;
         margin: 5px 0;
+
         img {
           max-width: 30px;
           border-radius: 50%;
         }
       }
-      .card-meta{
-        margin:5px 0;
+
+      .card-meta {
+        margin: 5px 0;
       }
 
       .card-author .author-name {
