@@ -121,11 +121,72 @@
                           <div
                             class="d-flex flex-wrap product-item__action align-items-center"
                           >
-                            <button
-                              class="btn btn-primary btn-default btn-squared border-0 me-10 my-sm-0 my-2"
-                            >
-                              Ikuti
-                            </button>
+                            <div class="action-btn">
+                              <a
+                                href="#"
+                                class="btn px-15 btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#ikuti"
+                              >
+                                <i class="las la-hand-point-right fs-20"></i
+                                >Ikuti</a
+                              >
+
+                              <!-- Modal -->
+                              <div
+                                class="modal fade ikuti"
+                                id="ikuti"
+                                role="dialog"
+                                tabindex="-1"
+                                aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true"
+                              >
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content radius-xl">
+                                    <div class="modal-header">
+                                      <h6
+                                        class="modal-title fw-500"
+                                        id="staticBackdropLabel"
+                                      >
+                                        Ikuti
+                                      </h6>
+                                      <button
+                                        type="button"
+                                        class="close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                      >
+                                        <img
+                                          src="/img/svg/x.svg"
+                                          alt="x"
+                                          class="svg"
+                                        />
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="new-member-modal">
+                                        <div class="button-group d-flex pt-25">
+                                          <button
+                                            class="btn btn-primary btn-default btn-squared text-capitalize"
+                                          >
+                                            add new project
+                                          </button>
+
+                                          <button
+                                            type="button"
+                                            class="btn btn-light btn-default btn-squared fw-400 text-capitalize bg-danger color-light"
+                                            data-bs-dismiss="modal"
+                                          >
+                                            cancel
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- Modal -->
+                            </div>
                           </div>
                         </div>
                         <!-- End: Product Selections -->
