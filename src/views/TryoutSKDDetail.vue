@@ -148,7 +148,7 @@
                                         class="modal-title fw-500"
                                         id="staticBackdropLabel"
                                       >
-                                        Ikuti
+                                        {{ tryoutskd.title }}
                                       </h6>
                                       <button
                                         type="button"
@@ -164,20 +164,26 @@
                                       </button>
                                     </div>
                                     <div class="modal-body">
-                                      <div class="new-member-modal">
-                                        <div class="button-group d-flex pt-25">
+                                      <span>
+                                        Gunakan {{ tryoutskd.harga }} koin untuk
+                                        mengikuti try out ini
+                                      </span>
+                                      <div class="ikuti-modal">
+                                        <div
+                                          class="button-group d-flex justify-content-end pt-25"
+                                        >
                                           <button
-                                            class="btn btn-primary btn-default btn-squared text-capitalize"
+                                            class="btn btn-primary btn-default btn-squared"
                                           >
-                                            add new project
+                                            Konfirmasi
                                           </button>
 
                                           <button
                                             type="button"
-                                            class="btn btn-light btn-default btn-squared fw-400 text-capitalize bg-danger color-light"
+                                            class="btn btn-danger btn-default btn-squared"
                                             data-bs-dismiss="modal"
                                           >
-                                            cancel
+                                            Batal
                                           </button>
                                         </div>
                                       </div>

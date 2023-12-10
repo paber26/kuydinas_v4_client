@@ -6,6 +6,11 @@ const routes = [
     component: () => import("../views/DashboardView.vue"),
   },
   {
+    path: "/promotryoutskd",
+    name: "promotryoutskd",
+    component: () => import("../views/TryoutSKDPromo.vue"),
+  },
+  {
     path: "/tryoutskd",
     name: "tryoutskd",
     component: () => import("../views/TryoutSKDView.vue"),

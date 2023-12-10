@@ -14,10 +14,16 @@
               <!-- <span class="toggle-icon"></span> -->
             </router-link>
           </li>
+          <li :class="currentRouteName == '/promotryoutskd' ? 'active' : ''">
+            <router-link to="/promotryoutskd">
+              <span class="nav-icon uil uil-clipboard-notes"></span>
+              <span class="menu-text">Promo Try Out SKD</span>
+            </router-link>
+          </li>
           <li :class="currentRouteName == '/tryoutskd' ? 'active' : ''">
             <router-link to="/tryoutskd">
-              <span class="nav-icon uil uil-clipboard-notes"></span>
-              <span class="menu-text">Try Out SKD CPNS</span>
+              <span class="nav-icon uil uil-edit-alt"></span>
+              <span class="menu-text">Pengerjaan Try Out SKD</span>
             </router-link>
           </li>
           <li :class="currentRouteName == '/materiskd' ? 'active' : ''">
