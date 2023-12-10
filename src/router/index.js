@@ -39,6 +39,11 @@ const routes = [
     props: true,
   },
   {
+    path: "/dompet",
+    name: "dompet",
+    component: () => import("../views/DompetView.vue"),
+  },
+  {
     path: "/materiskd",
     name: "materiskd",
     component: () => import("../views/TryoutSKDView.vue"),

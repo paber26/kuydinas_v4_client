@@ -26,6 +26,12 @@
               <span class="menu-text">Pengerjaan Try Out SKD</span>
             </router-link>
           </li>
+          <li :class="currentRouteName == '/dompet' ? 'active' : ''">
+            <router-link to="/dompet">
+              <span class="nav-icon uil uil-wallet"></span>
+              <span class="menu-text">Dompet</span>
+            </router-link>
+          </li>
           <li :class="currentRouteName == '/materiskd' ? 'active' : ''">
             <router-link to="/materiskd">
               <span class="nav-icon uil uil-meeting-board"></span>
