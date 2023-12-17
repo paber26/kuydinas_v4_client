@@ -75,11 +75,12 @@
               </div>
             </div>
             <div class="price_action d-flex pb-30 ps-30">
-              <button
+              <router-link
+                to="/dompet/pembayaran"
                 class="btn btn-primary btn-default btn-squared text-capitalize px-30"
               >
                 Pilih
-              </button>
+              </router-link>
             </div>
           </div>
           <!-- End: .card -->

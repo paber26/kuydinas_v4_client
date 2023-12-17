@@ -130,9 +130,6 @@
                       <th>
                         <span class="userDatatable-title">Status</span>
                       </th>
-                      <th class="actions">
-                        <span class="userDatatable-title">Actions</span>
-                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -180,33 +177,6 @@
                             >{{ tskd.status }}</span
                           >
                         </a>
-                      </td>
-                      <td>
-                        <ul
-                          class="orderDatatable_actions mb-0 d-flex flex-wrap"
-                        >
-                          <li>
-                            <router-link
-                              :to="'/tryoutskd/lihat/' + tskd.eid"
-                              class="view"
-                            >
-                              <i class="uil uil-eye"></i>
-                            </router-link>
-                          </li>
-                          <li>
-                            <router-link
-                              :to="'/tryoutskd/edit/' + tskd.eid"
-                              class="edit"
-                            >
-                              <i class="uil uil-edit"></i>
-                            </router-link>
-                          </li>
-                          <li>
-                            <a href="#" class="remove">
-                              <i class="uil uil-trash-alt"></i>
-                            </a>
-                          </li>
-                        </ul>
                       </td>
                     </tr>
                   </tbody>

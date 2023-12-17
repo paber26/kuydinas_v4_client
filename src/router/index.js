@@ -44,6 +44,11 @@ const routes = [
     component: () => import("../views/DompetView.vue"),
   },
   {
+    path: "/dompet/pembayaran",
+    name: "dompet/pembayaran",
+    component: () => import("../views/DompetPembayaran.vue"),
+  },
+  {
     path: "/materiskd",
     name: "materiskd",
     component: () => import("../views/TryoutSKDView.vue"),
