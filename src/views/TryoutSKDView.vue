@@ -141,9 +141,12 @@
                       <td>
                         <div class="d-flex">
                           <div class="userDatatable-inline-title">
-                            <a href="#" class="text-dark fw-500">
+                            <router-link
+                              :to="'/tryoutskd/detail/' + tskd.eid"
+                              class="text-dark fw-500"
+                            >
                               <h6>{{ tskd.title }}</h6>
-                            </a>
+                            </router-link>
                           </div>
                         </div>
                       </td>

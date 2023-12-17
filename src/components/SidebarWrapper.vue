@@ -38,12 +38,6 @@
               <span class="menu-text">Materi SKD</span>
             </router-link>
           </li>
-          <li :class="currentRouteName == '/akun' ? 'active' : ''">
-            <router-link to="/akun">
-              <span class="nav-icon uil uil-users-alt"></span>
-              <span class="menu-text">Akun</span>
-            </router-link>
-          </li>
           <li :class="currentRouteName == '/testimoni' ? 'active' : ''">
             <router-link to="/testimoni">
               <span class="nav-icon uil uil-book-open"></span>
