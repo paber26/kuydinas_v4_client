@@ -29,7 +29,7 @@
         </div>
         <div class="col-lg-8 mb-30">
           <div class="job-details-card">
-            <div class="job-details-card__middle">
+            <div class="job-details-card__middle text-start">
               <div class="job-item__title">
                 <a href="jobDetails.html">
                   <h3 class="card-title">Paket basic plan</h3>
@@ -39,10 +39,21 @@
                 Koin yang dibeli dapat digunakan untuk mengikuti setiap tryout
                 yang ada di kuy dinas.
               </p>
-              <a href="job-apply.html" class="btn btn-primary w-100"
-                >Lakukan Pembayaran</a
-              >
+              <div class="pricing__features">
+                <ul class="text-start">
+                  <li><span class="fa fa-check"></span>Harga Rp10.000</li>
+
+                  <li><span class="fa fa-check"></span>Mendapat 200 koin</li>
+                </ul>
+              </div>
             </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-30">
+          <div class="job-details-widget">
+            <router-link to="/" class="btn btn-primary w-100"
+              >Lakukan pembayaran</router-link
+            >
           </div>
         </div>
       </div>
