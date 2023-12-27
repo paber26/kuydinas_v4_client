@@ -42,11 +42,6 @@
                   </h4>
                 </div>
               </div>
-              <div class="action-btn">
-                <router-link to="/tryoutskd/tambah" class="btn btn-primary"
-                  >Tambah</router-link
-                >
-              </div>
             </div>
 
             <div
@@ -117,18 +112,13 @@
                         <span class="userDatatable-title">Nama</span>
                       </th>
                       <th>
-                        <span class="userDatatable-title"
-                          >Jumlah Pendaftar</span
-                        >
-                      </th>
-                      <th>
                         <span class="userDatatable-title">Waktu</span>
                       </th>
                       <th>
                         <span class="userDatatable-title">Harga</span>
                       </th>
                       <th>
-                        <span class="userDatatable-title">Status</span>
+                        <span class="userDatatable-title"></span>
                       </th>
                     </tr>
                   </thead>
@@ -149,11 +139,6 @@
                       </td>
                       <td>
                         <div class="userDatatable-content--subject">
-                          United Street
-                        </div>
-                      </td>
-                      <td>
-                        <div class="userDatatable-content--subject">
                           {{ tskd.time }} menit
                         </div>
                       </td>
@@ -163,20 +148,26 @@
                         </div>
                       </td>
                       <td>
-                        <a
-                          href="#"
+                        <router-link
+                          v-if="tskd.status == 'ongoing'"
+                          :to="'/pengerjaan/tryoutskd/' + tskd.eid"
                           class="userDatatable-content d-inline-block"
                         >
                           <span
-                            class="userDatatable-content-status"
-                            :class="
-                              tskd.status == 'enabled'
-                                ? 'bg-opacity-success color-success'
-                                : 'bg-opacity-danger color-danger'
-                            "
-                            >{{ tskd.status }}</span
+                            class="userDatatable-content-status bg-opacity-warning color-warning"
+                            >Lanjutkan</span
                           >
-                        </a>
+                        </router-link>
+                        <router-link
+                          v-if="tskd.status == 'finished'"
+                          :to="'/tryoutskd/pembahasan/' + tskd.eid"
+                          class="userDatatable-content d-inline-block"
+                        >
+                          <span
+                            class="userDatatable-content-status bg-opacity-success color-success"
+                            >Lihat Pembahasan</span
+                          >
+                        </router-link>
                       </td>
                     </tr>
                   </tbody>
@@ -234,6 +225,7 @@ import axios from "axios";
 
 export default {
   props: {
+    user: Object,
     expanded: Boolean,
   },
   data() {
@@ -242,11 +234,13 @@ export default {
     };
   },
   mounted() {
-    axios.get(this.http + "/api/tryoutskd").then((response) => {
-      this.tryoutskd = response.data;
-      console.log(response.data);
-    });
-    console.log(this.http);
+    console.log(this.user);
+    axios
+      .get(this.http + "/api/tryoutskd/pengerjaan/" + this.user.email)
+      .then((response) => {
+        this.tryoutskd = response.data;
+        console.log(response.data);
+      });
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar-wrapper">
+  <div class="sidebar-wrapper" v-if="currentRouteName != '/pengerjaan'">
     <div
       class="sidebar sidebar-collapse"
       :class="expanded ? 'collapsed' : ''"
@@ -66,6 +66,7 @@ export default {
   // },
   computed: {
     currentRouteName() {
+      console.log(this.currentRouteName);
       return "/" + this.$router.currentRoute.value.path.split("/")[1];
     },
   },

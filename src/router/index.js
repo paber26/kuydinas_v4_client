@@ -33,9 +33,21 @@ const routes = [
     props: true,
   },
   {
+    path: "/tryoutskd/pembahasan/:eid",
+    name: "tryoutskdpembahasan",
+    component: () => import("../views/TryoutSKDPembahasan.vue"),
+    props: true,
+  },
+  {
     path: "/tryoutskd/edit/:eid",
     name: "tryoutskdedit",
     component: () => import("../views/TryoutSKDEdit.vue"),
+    props: true,
+  },
+  {
+    path: "/pengerjaan/tryoutskd/:eid",
+    name: "pengerjaantryoutskd",
+    component: () => import("../views/Pengerjaan/SKD.vue"),
     props: true,
   },
   {
