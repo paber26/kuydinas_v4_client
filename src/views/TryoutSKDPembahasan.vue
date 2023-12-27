@@ -280,6 +280,7 @@
                 <ul class="nav px-1" id="ap-tab" role="tablist">
                   <li class="nav-item">
                     <a
+                      @click.prevent="tunjukkan('semua')"
                       class="nav-link active"
                       id="ap-overview-tab"
                       data-bs-toggle="pill"
@@ -292,6 +293,7 @@
                   </li>
                   <li class="nav-item">
                     <a
+                      @click.prevent="tunjukkan('tidak dijawab')"
                       class="nav-link"
                       id="timeline-tab"
                       data-bs-toggle="pill"
@@ -304,6 +306,7 @@
                   </li>
                   <li class="nav-item">
                     <a
+                      @click.prevent="tunjukkan('benar')"
                       class="nav-link"
                       id="activity-tab"
                       data-bs-toggle="pill"
@@ -316,6 +319,7 @@
                   </li>
                   <li class="nav-item">
                     <a
+                      @click.prevent="tunjukkan('salah')"
                       class="nav-link"
                       id="late-tab"
                       data-bs-toggle="pill"
@@ -343,545 +347,6 @@
             aria-labelledby="ap-overview-tab"
           >
             <div class="row">
-              <div class="mb-25">
-                <div
-                  class="user-group radius-xl media-ui media-ui--early pt-30 pb-25"
-                >
-                  <div class="border-bottom px-30">
-                    <div
-                      class="media user-group-media d-flex justify-content-between"
-                    >
-                      <div
-                        class="media-body d-flex align-items-center flex-wrap text-capitalize my-sm-0 my-n2"
-                      >
-                        <a href="application-ui.html">
-                          <h6
-                            class="mt-0 fw-500 user-group media-ui__title bg-transparent"
-                          >
-                            Soal nomor 1
-                          </h6>
-                        </a>
-                        <span
-                          class="my-sm-0 my-2 media-badge text-uppercase color-white bg-primary"
-                          >early</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      class="user-group-people mt-15 text-capitalize text-start"
-                    >
-                      <p>
-                        Lorem ipsum dolor amet, consetetur sadipscing elitr sed
-                        diam nonumy eirmod dolor ame.
-                      </p>
-                      <div class="user-group-project">
-                        <div
-                          class="d-flex align-items-center user-group-progress-top"
-                        >
-                          <div class="media-ui__start">
-                            <span class="color-light fs-12">Jawaban kamu</span>
-                            <p class="fs-14 fw-500 color-dark mb-0">
-                              26 Dec 2019
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 mb-25 col-md-6">
-                <div
-                  class="user-group radius-xl media-ui media-ui--onHold pt-30 pb-25"
-                >
-                  <div class="border-bottom px-30">
-                    <div
-                      class="media user-group-media d-flex justify-content-between"
-                    >
-                      <div
-                        class="media-body d-flex align-items-center flex-wrap text-capitalize my-sm-0 my-n2"
-                      >
-                        <a href="application-ui.html">
-                          <h6
-                            class="mt-0 fw-500 user-group media-ui__title bg-transparent"
-                          >
-                            Application UI Design
-                          </h6>
-                        </a>
-                        <span
-                          class="my-sm-0 my-2 media-badge text-uppercase color-white bg-warning"
-                          >on hold</span
-                        >
-                      </div>
-                      <div class="mt-n15">
-                        <div class="dropdown dropleft">
-                          <button
-                            class="btn-link border-0 bg-transparent p-0"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            <img
-                              src="/img/svg/more-horizontal.svg"
-                              alt="more-horizontal"
-                              class="svg"
-                            />
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">view</a>
-                            <a class="dropdown-item" href="#">edit</a>
-                            <a class="dropdown-item" href="#">leave</a>
-                            <a class="dropdown-item" href="#">delete</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="user-group-people mt-15 text-capitalize">
-                      <p>
-                        Lorem ipsum dolor amet, consetetur sadipscing elitr sed
-                        diam nonumy eirmod dolor ame.
-                      </p>
-                      <div class="user-group-project">
-                        <div
-                          class="d-flex align-items-center user-group-progress-top"
-                        >
-                          <div class="media-ui__start">
-                            <span class="color-light fs-12">Start Date</span>
-                            <p class="fs-14 fw-500 color-dark mb-0">
-                              26 Dec 2019
-                            </p>
-                          </div>
-                          <div class="media-ui__end">
-                            <span class="color-light fs-12">end date</span>
-                            <p class="fs-16 fw-500 color-success mb-0">
-                              18 Mar 2020
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="user-group-progress-bar">
-                      <div class="progress-wrap d-flex align-items-center mb-0">
-                        <div class="progress">
-                          <div
-                            class="progress-bar bg-primary"
-                            role="progressbar"
-                            style="width: 83%"
-                            aria-valuenow="83"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-
-                        <span class="progress-percentage">83%</span>
-                      </div>
-
-                      <p class="color-light fs-12 mb-20">
-                        12 / 15 tasks completed
-                      </p>
-                    </div>
-                  </div>
-                  <div class="mt-20 px-30">
-                    <p class="fs-13 color-light mb-10">Assigned To</p>
-                    <ul class="d-flex flex-wrap user-group-people__parent">
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm1.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm2.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm3.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm4.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm5.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm6.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm1.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm2.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 mb-25 col-md-6">
-                <div
-                  class="user-group radius-xl media-ui media-ui--late pt-30 pb-25"
-                >
-                  <div class="border-bottom px-30">
-                    <div
-                      class="media user-group-media d-flex justify-content-between"
-                    >
-                      <div
-                        class="media-body d-flex align-items-center flex-wrap text-capitalize my-sm-0 my-n2"
-                      >
-                        <a href="application-ui.html">
-                          <h6
-                            class="mt-0 fw-500 user-group media-ui__title bg-transparent"
-                          >
-                            Custom Software Development
-                          </h6>
-                        </a>
-                        <span
-                          class="my-sm-0 my-2 media-badge text-uppercase color-white bg-danger"
-                          >late</span
-                        >
-                      </div>
-                      <div class="mt-n15">
-                        <div class="dropdown dropleft">
-                          <button
-                            class="btn-link border-0 bg-transparent p-0"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            <img
-                              src="/img/svg/more-horizontal.svg"
-                              alt="more-horizontal"
-                              class="svg"
-                            />
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">view</a>
-                            <a class="dropdown-item" href="#">edit</a>
-                            <a class="dropdown-item" href="#">leave</a>
-                            <a class="dropdown-item" href="#">delete</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="user-group-people mt-15 text-capitalize">
-                      <p>
-                        Lorem ipsum dolor amet, consetetur sadipscing elitr sed
-                        diam nonumy eirmod dolor ame.
-                      </p>
-                      <div class="user-group-project">
-                        <div
-                          class="d-flex align-items-center user-group-progress-top"
-                        >
-                          <div class="media-ui__start">
-                            <span class="color-light fs-12">Start Date</span>
-                            <p class="fs-14 fw-500 color-dark mb-0">
-                              26 Dec 2019
-                            </p>
-                          </div>
-                          <div class="media-ui__end">
-                            <span class="color-light fs-12">end date</span>
-                            <p class="fs-16 fw-500 color-success mb-0">
-                              18 Mar 2020
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="user-group-progress-bar">
-                      <div class="progress-wrap d-flex align-items-center mb-0">
-                        <div class="progress">
-                          <div
-                            class="progress-bar bg-primary"
-                            role="progressbar"
-                            style="width: 83%"
-                            aria-valuenow="83"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-
-                        <span class="progress-percentage">83%</span>
-                      </div>
-
-                      <p class="color-light fs-12 mb-20">
-                        12 / 15 tasks completed
-                      </p>
-                    </div>
-                  </div>
-                  <div class="mt-20 px-30">
-                    <p class="fs-13 color-light mb-10">Assigned To</p>
-                    <ul class="d-flex flex-wrap user-group-people__parent">
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm1.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm2.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm3.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm4.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm5.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm6.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm1.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm2.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 mb-25 col-md-6">
-                <div
-                  class="user-group radius-xl media-ui media-ui--completed pt-30 pb-25"
-                >
-                  <div class="border-bottom px-30">
-                    <div
-                      class="media user-group-media d-flex justify-content-between"
-                    >
-                      <div
-                        class="media-body d-flex align-items-center text-capitalize"
-                      >
-                        <a href="application-ui.html">
-                          <h6 class="mt-0 fw-500 media-ui__title">
-                            Dashboard UI Project
-                          </h6>
-                        </a>
-                        <span
-                          class="media-badge text-uppercase color-white bg-success"
-                          >completed</span
-                        >
-                      </div>
-                      <div class="mt-n15">
-                        <div class="dropdown dropleft">
-                          <button
-                            class="btn-link border-0 bg-transparent p-0"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            <img
-                              src="/img/svg/more-horizontal.svg"
-                              alt="more-horizontal"
-                              class="svg"
-                            />
-                          </button>
-                          <div class="dropdown-menu dropdown-t-0">
-                            <a class="dropdown-item" href="#">view</a>
-                            <a class="dropdown-item" href="#">edit</a>
-                            <a class="dropdown-item" href="#">leave</a>
-                            <a class="dropdown-item" href="#">delete</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="user-group-people mt-15 text-capitalize">
-                      <p>
-                        Lorem ipsum dolor amet, consetetur sadipscing elitr sed
-                        diam nonumy eirmod dolor ame.
-                      </p>
-                      <div class="user-group-project">
-                        <div
-                          class="d-flex align-items-center user-group-progress-top"
-                        >
-                          <div class="media-ui__start">
-                            <span class="color-light fs-12">Start Date</span>
-                            <p class="fs-14 fw-500 color-dark mb-0">
-                              26 Dec 2019
-                            </p>
-                          </div>
-                          <div class="media-ui__end">
-                            <span class="color-light fs-12">end date</span>
-                            <p class="fs-16 fw-500 color-success mb-0">
-                              18 Mar 2020
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="user-group-progress-bar">
-                      <div class="progress-wrap d-flex align-items-center mb-0">
-                        <div class="progress">
-                          <div
-                            class="progress-bar bg-success"
-                            role="progressbar"
-                            style="width: 100%"
-                            aria-valuenow="100"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-
-                        <span class="progress-icon"
-                          ><img
-                            src="/img/svg/check.svg"
-                            alt="check"
-                            class="svg color-success"
-                        /></span>
-                      </div>
-
-                      <p class="color-light fs-12 mb-20">
-                        12 / 15 tasks completed
-                      </p>
-                    </div>
-                  </div>
-                  <div class="mt-20 px-30">
-                    <p class="fs-13 color-light mb-10">Assigned To</p>
-                    <ul class="d-flex flex-wrap user-group-people__parent">
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm1.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm2.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm3.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm4.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm5.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm6.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm1.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm2.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
               <!-- Soal dan Pembahasan -->
               <!-- <div class="mb-25" v-for="sn in range(pembahasans.length)" :key="sn.id"> -->
               <div
@@ -890,6 +355,7 @@
                 :key="pmb.id"
               >
                 <div
+                  v-if="tunjuk == 'semua'"
                   class="user-group radius-xl media-ui media-ui--early pt-30 pb-25"
                 >
                   <div class="px-30">
@@ -903,7 +369,7 @@
                           <h6
                             class="mt-0 fw-500 user-group media-ui__title bg-transparent"
                           >
-                            Soal nomor {{ index + 1 }}
+                            Soal nomor {{ pmb.sn }}
                           </h6>
                         </a>
                         <span
@@ -961,494 +427,67 @@
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div class="col-xl-4 mb-25 col-md-6">
                 <div
-                  class="user-group radius-xl media-ui media-ui--onHold pt-30 pb-25"
+                  v-else-if="tunjuk == 'benar' && pmb.choose == pmb.ans"
+                  class="user-group radius-xl media-ui media-ui--early pt-30 pb-25"
                 >
-                  <div class="border-bottom px-30">
+                  <div class="px-30">
                     <div
                       class="media user-group-media d-flex justify-content-between"
                     >
                       <div
-                        class="media-body d-flex align-items-center flex-wrap text-capitalize my-sm-0 my-n2"
+                        class="media-body d-flex align-items-center flex-wrap my-sm-0 my-n2"
                       >
                         <a href="application-ui.html">
                           <h6
                             class="mt-0 fw-500 user-group media-ui__title bg-transparent"
                           >
-                            Application UI Design
+                            Soal nomor {{ pmb.sn }}
                           </h6>
                         </a>
                         <span
-                          class="my-sm-0 my-2 media-badge text-uppercase color-white bg-warning"
-                          >on hold</span
+                          v-if="pmb.choose == pmb.ans"
+                          class="my-sm-0 my-2 media-badge text-uppercase color-white bg-success"
+                          >Benar</span
                         >
                       </div>
-                      <div class="mt-n15">
-                        <div class="dropdown dropleft">
-                          <button
-                            class="btn-link border-0 bg-transparent p-0"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            <img
-                              src="/img/svg/more-horizontal.svg"
-                              alt="more-horizontal"
-                              class="svg"
-                            />
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">view</a>
-                            <a class="dropdown-item" href="#">edit</a>
-                            <a class="dropdown-item" href="#">leave</a>
-                            <a class="dropdown-item" href="#">delete</a>
-                          </div>
-                        </div>
-                      </div>
                     </div>
-                    <div class="user-group-people mt-15 text-capitalize">
-                      <p>
-                        Lorem ipsum dolor amet, consetetur sadipscing elitr sed
-                        diam nonumy eirmod dolor ame.
-                      </p>
+
+                    <div class="user-group-people mt-15 text-start">
                       <div class="user-group-project">
                         <div
                           class="d-flex align-items-center user-group-progress-top"
                         >
                           <div class="media-ui__start">
-                            <span class="color-light fs-12">Start Date</span>
-                            <p class="fs-14 fw-500 color-dark mb-0">
-                              26 Dec 2019
-                            </p>
-                          </div>
-                          <div class="media-ui__end">
-                            <span class="color-light fs-12">end date</span>
-                            <p class="fs-16 fw-500 color-success mb-0">
-                              18 Mar 2020
-                            </p>
+                            <p
+                              v-html="pmb.qns"
+                              class="fs-14 fw-500 color-dark mb-0"
+                            ></p>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="user-group-progress-bar">
-                      <div class="progress-wrap d-flex align-items-center mb-0">
-                        <div class="progress">
-                          <div
-                            class="progress-bar bg-primary"
-                            role="progressbar"
-                            style="width: 83%"
-                            aria-valuenow="83"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-
-                        <span class="progress-percentage">83%</span>
-                      </div>
-
-                      <p class="color-light fs-12 mb-20">
-                        12 / 15 tasks completed
-                      </p>
-                    </div>
-                  </div>
-                  <div class="mt-20 px-30">
-                    <p class="fs-13 color-light mb-10">Assigned To</p>
-                    <ul class="d-flex flex-wrap user-group-people__parent">
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm1.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm2.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm3.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm4.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm5.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm6.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm1.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm2.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 mb-25 col-md-6">
-                <div
-                  class="user-group radius-xl media-ui media-ui--late pt-30 pb-25"
-                >
-                  <div class="border-bottom px-30">
-                    <div
-                      class="media user-group-media d-flex justify-content-between"
-                    >
-                      <div
-                        class="media-body d-flex align-items-center flex-wrap text-capitalize my-sm-0 my-n2"
-                      >
-                        <a href="application-ui.html">
-                          <h6
-                            class="mt-0 fw-500 user-group media-ui__title bg-transparent"
-                          >
-                            Custom Software Development
-                          </h6>
-                        </a>
-                        <span
-                          class="my-sm-0 my-2 media-badge text-uppercase color-white bg-danger"
-                          >late</span
-                        >
-                      </div>
-                      <div class="mt-n15">
-                        <div class="dropdown dropleft">
-                          <button
-                            class="btn-link border-0 bg-transparent p-0"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            <img
-                              src="/img/svg/more-horizontal.svg"
-                              alt="more-horizontal"
-                              class="svg"
-                            />
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">view</a>
-                            <a class="dropdown-item" href="#">edit</a>
-                            <a class="dropdown-item" href="#">leave</a>
-                            <a class="dropdown-item" href="#">delete</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="user-group-people mt-15 text-capitalize">
-                      <p>
-                        Lorem ipsum dolor amet, consetetur sadipscing elitr sed
-                        diam nonumy eirmod dolor ame.
-                      </p>
-                      <div class="user-group-project">
                         <div
                           class="d-flex align-items-center user-group-progress-top"
                         >
                           <div class="media-ui__start">
-                            <span class="color-light fs-12">Start Date</span>
+                            <span class="color-light fs-12">Jawaban kamu</span>
                             <p class="fs-14 fw-500 color-dark mb-0">
-                              26 Dec 2019
-                            </p>
-                          </div>
-                          <div class="media-ui__end">
-                            <span class="color-light fs-12">end date</span>
-                            <p class="fs-16 fw-500 color-success mb-0">
-                              18 Mar 2020
+                              {{ opsi[index].option }}
                             </p>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="user-group-progress-bar">
-                      <div class="progress-wrap d-flex align-items-center mb-0">
-                        <div class="progress">
-                          <div
-                            class="progress-bar bg-primary"
-                            role="progressbar"
-                            style="width: 83%"
-                            aria-valuenow="83"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-
-                        <span class="progress-percentage">83%</span>
-                      </div>
-
-                      <p class="color-light fs-12 mb-20">
-                        12 / 15 tasks completed
-                      </p>
-                    </div>
-                  </div>
-                  <div class="mt-20 px-30">
-                    <p class="fs-13 color-light mb-10">Assigned To</p>
-                    <ul class="d-flex flex-wrap user-group-people__parent">
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm1.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm2.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm3.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm4.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm5.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm6.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm1.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm2.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 mb-25 col-md-6">
-                <div
-                  class="user-group radius-xl media-ui media-ui--completed pt-30 pb-25"
-                >
-                  <div class="border-bottom px-30">
-                    <div
-                      class="media user-group-media d-flex justify-content-between"
-                    >
-                      <div
-                        class="media-body d-flex align-items-center text-capitalize"
-                      >
-                        <a href="application-ui.html">
-                          <h6 class="mt-0 fw-500 media-ui__title">
-                            Dashboard UI Project
-                          </h6>
-                        </a>
-                        <span
-                          class="media-badge text-uppercase color-white bg-success"
-                          >completed</span
-                        >
-                      </div>
-                      <div class="mt-n15">
-                        <div class="dropdown dropleft">
-                          <button
-                            class="btn-link border-0 bg-transparent p-0"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            <img
-                              src="/img/svg/more-horizontal.svg"
-                              alt="more-horizontal"
-                              class="svg"
-                            />
-                          </button>
-                          <div class="dropdown-menu dropdown-t-0">
-                            <a class="dropdown-item" href="#">view</a>
-                            <a class="dropdown-item" href="#">edit</a>
-                            <a class="dropdown-item" href="#">leave</a>
-                            <a class="dropdown-item" href="#">delete</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="user-group-people mt-15 text-capitalize">
-                      <p>
-                        Lorem ipsum dolor amet, consetetur sadipscing elitr sed
-                        diam nonumy eirmod dolor ame.
-                      </p>
-                      <div class="user-group-project">
                         <div
                           class="d-flex align-items-center user-group-progress-top"
                         >
                           <div class="media-ui__start">
-                            <span class="color-light fs-12">Start Date</span>
-                            <p class="fs-14 fw-500 color-dark mb-0">
-                              26 Dec 2019
-                            </p>
-                          </div>
-                          <div class="media-ui__end">
-                            <span class="color-light fs-12">end date</span>
-                            <p class="fs-16 fw-500 color-success mb-0">
-                              18 Mar 2020
-                            </p>
+                            <span class="color-light fs-12">Pembahasan</span>
+                            <p
+                              v-html="pmb.exp"
+                              class="fs-14 fw-500 color-dark mb-0"
+                            ></p>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="user-group-progress-bar">
-                      <div class="progress-wrap d-flex align-items-center mb-0">
-                        <div class="progress">
-                          <div
-                            class="progress-bar bg-success"
-                            role="progressbar"
-                            style="width: 100%"
-                            aria-valuenow="100"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-
-                        <span class="progress-icon"
-                          ><img
-                            src="/img/svg/check.svg"
-                            alt="check"
-                            class="svg color-success"
-                        /></span>
-                      </div>
-
-                      <p class="color-light fs-12 mb-20">
-                        12 / 15 tasks completed
-                      </p>
-                    </div>
-                  </div>
-                  <div class="mt-20 px-30">
-                    <p class="fs-13 color-light mb-10">Assigned To</p>
-                    <ul class="d-flex flex-wrap user-group-people__parent">
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm1.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm2.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm3.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm4.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm5.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm6.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm1.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            class="rounded-circle wh-34 bg-opacity-secondary"
-                            src="/img/tm2.png"
-                            alt="author"
-                        /></a>
-                      </li>
-                    </ul>
                   </div>
                 </div>
               </div>
@@ -1472,26 +511,60 @@ export default {
   },
   data() {
     return {
+      pembahasanlengkap: [],
       pembahasans: [],
       opsi: [],
+      tunjuk: "semua",
     };
   },
   mounted() {
-    console.log(this.user);
-    axios
-      .get(
-        this.http +
-          "/api/tryoutskd/getsoaldanpembahasan/" +
-          this.user.email +
-          "/" +
-          this.eid
-      )
-      .then((response) => {
-        this.pembahasans = response.data[0];
-        this.opsi = response.data[1];
-
-        console.log(response.data);
-      });
+    this.getsoaldanpembahasan();
+  },
+  methods: {
+    getsoaldanpembahasan() {
+      axios
+        .get(
+          this.http +
+            "/api/tryoutskd/getsoaldanpembahasan/" +
+            this.user.email +
+            "/" +
+            this.eid
+        )
+        .then((response) => {
+          this.pembahasanlengkap = response.data[0];
+          this.pembahasans = this.pembahasanlengkap;
+          this.opsi = response.data[1];
+        });
+    },
+    tunjukkan(status) {
+      this.pembahasans = [];
+      if (status == "semua") {
+        this.pembahasans = this.pembahasanlengkap;
+      } else if (status == "benar") {
+        for (let i in this.pembahasanlengkap) {
+          if (
+            this.pembahasanlengkap[i].choose == this.pembahasanlengkap[i].ans
+          ) {
+            this.pembahasans.push(this.pembahasanlengkap[i]);
+          }
+        }
+      } else if (status == "tidak dijawab") {
+        for (let i in this.pembahasanlengkap) {
+          if (this.pembahasanlengkap[i].choose == "1") {
+            this.pembahasans.push(this.pembahasanlengkap[i]);
+          }
+        }
+      } else if (status == "salah") {
+        for (let i in this.pembahasanlengkap) {
+          if (
+            this.pembahasanlengkap[i].choose != this.pembahasanlengkap[i].ans &&
+            this.pembahasanlengkap[i].choose != "1"
+          ) {
+            this.pembahasans.push(this.pembahasanlengkap[i]);
+          }
+        }
+      }
+    },
   },
 };
 </script>
