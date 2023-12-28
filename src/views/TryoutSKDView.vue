@@ -149,7 +149,17 @@
                       </td>
                       <td>
                         <router-link
-                          v-if="tskd.status == 'ongoing'"
+                          v-if="tskd.status == null"
+                          :to="'/pengerjaan/tryoutskd/' + tskd.eid"
+                          class="userDatatable-content d-inline-block"
+                        >
+                          <span
+                            class="userDatatable-content-status bg-opacity-primary color-primary"
+                            >Kerjakan</span
+                          >
+                        </router-link>
+                        <router-link
+                          v-else-if="tskd.status == 'ongoing'"
                           :to="'/pengerjaan/tryoutskd/' + tskd.eid"
                           class="userDatatable-content d-inline-block"
                         >
@@ -159,7 +169,7 @@
                           >
                         </router-link>
                         <router-link
-                          v-if="tskd.status == 'finished'"
+                          v-else-if="tskd.status == 'finished'"
                           :to="'/tryoutskd/pembahasan/' + tskd.eid"
                           class="userDatatable-content d-inline-block"
                         >
@@ -233,14 +243,22 @@ export default {
       tryoutskd: [],
     };
   },
+  // mounted() {
+  //   console.log(this.user);
+  //   axios
+  //     .get(this.http + "/api/tryoutskd/pengerjaan/" + this.user.email)
+  //     .then((response) => {
+  //       this.tryoutskd = response.data;
+  //       console.log(response.data);
+  //     });
   mounted() {
-    console.log(this.user);
     axios
-      .get(this.http + "/api/tryoutskd/pengerjaan/" + this.user.email)
+      .get(this.http + "/api/tryoutskd/getteraktivasi/" + this.user.email)
       .then((response) => {
         this.tryoutskd = response.data;
         console.log(response.data);
       });
+    console.log(this.http);
   },
 };
 </script>
