@@ -30,6 +30,9 @@
             <router-link to="/dompet">
               <span class="nav-icon uil uil-wallet"></span>
               <span class="menu-text">Dompet</span>
+              <span class="badge badge-success menuItem rounded-circle">{{
+                koin
+              }}</span>
             </router-link>
           </li>
           <li :class="currentRouteName == '/materiskd' ? 'active' : ''">
@@ -51,22 +54,32 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   props: {
+    user: Object,
     msg: String,
     expanded: Boolean,
   },
-  // data() {
-  //   return {
-  //     currentRouteName: this.$router.currentRoute.value.path,
-  //   };
-  // },
-  // mounted() {
-  //   console.log(this.currentRouteName);
-  // },
+  data() {
+    return {
+      koin: "",
+    };
+  },
+  mounted() {
+    axios
+      .get(this.http + "/api/getinfoakun/" + this.user.email)
+      .then((response) => {
+        // this.tryoutskd = response.data;
+        this.koin = response.data["koin"];
+        console.log(response.data);
+      });
+    console.log("tampilkan");
+    console.log(this.user);
+  },
   computed: {
     currentRouteName() {
-      console.log(this.currentRouteName);
+      // console.log(this.currentRouteName);
       return "/" + this.$router.currentRoute.value.path.split("/")[1];
     },
   },

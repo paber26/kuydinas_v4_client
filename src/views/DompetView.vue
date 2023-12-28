@@ -34,7 +34,7 @@
                 class="ap-po-details-content d-flex flex-wrap justify-content-between"
               >
                 <div class="ap-po-details__titlebar">
-                  <h1>350</h1>
+                  <h1>{{ koin }}</h1>
                   <p>Total Koin</p>
                 </div>
                 <div class="ap-po-details__icon-area">
@@ -402,19 +402,25 @@
 import axios from "axios";
 
 export default {
-  props: ["eid", "expanded"],
+  props: ["user", "eid", "expanded"],
   data() {
     return {
       tryoutskd: [],
+      koin: "",
     };
   },
   mounted() {
-    console.log(this.eid);
+    // console.log(this.user);
     axios
       .get(this.http + "/api/tryoutskd/getdetail/" + this.eid)
       .then((response) => {
         this.tryoutskd = response.data;
-        console.log(this.tryoutskd);
+      });
+
+    axios
+      .get(this.http + "/api/getinfoakun/" + this.user.email)
+      .then((response) => {
+        this.koin = response.data["koin"];
       });
   },
 };

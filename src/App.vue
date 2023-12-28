@@ -15,7 +15,7 @@
 
     <HeaderTop :user="user" @listenerChild="listenerChild"></HeaderTop>
     <main class="main-content">
-      <SidebarWrapper :expanded="expanded"></SidebarWrapper>
+      <SidebarWrapper :expanded="expanded" :user="user"></SidebarWrapper>
 
       <router-view :expanded="expanded" :user="user" />
 
@@ -46,6 +46,7 @@ import SidebarWrapper from "./components/SidebarWrapper.vue";
 import FooterWrapper from "./components/FooterWrapper.vue";
 
 import { decodeCredential } from "vue3-google-login";
+import axios from "axios";
 
 export default {
   data() {
@@ -53,9 +54,10 @@ export default {
       loggedIn: false,
       expanded: false,
       user: null,
-      callback: (respoonse) => {
+      callback: (response) => {
         this.loggedIn = true;
-        this.user = decodeCredential(respoonse.credential);
+        this.user = decodeCredential(response.credential);
+        this.user = decodeCredential(response.credential);
       },
     };
   },
@@ -72,6 +74,13 @@ export default {
       } else if (reply.stt == "expanded") {
         this.expanded = !this.expanded;
       }
+    },
+    getinfouser() {
+      axios.get(this.http + "/api/getinfouser").then((response) => {
+        // this.tryoutskd = response.data;
+        console.log(response.data);
+        return response.data;
+      });
     },
   },
 

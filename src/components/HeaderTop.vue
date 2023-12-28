@@ -903,17 +903,19 @@
                       />
                     </div>
                     <div>
-                      <h6>Rabbi Islam Rony</h6>
-                      <span>UI Designer</span>
+                      <h6>{{ user.name }}</h6>
+                      <span>User</span>
                     </div>
                   </div>
                   <div class="nav-author__options">
-                    <ul>
+                    <ul class="text-start">
                       <li>
-                        <a href=""> <i class="uil uil-user"></i> Profile</a>
+                        <router-link to="/dompet">
+                          <i class="uil uil-user"></i> Dompet</router-link
+                        >
                       </li>
                       <li>
-                        <a href=""> <i class="uil uil-bell"></i> Help</a>
+                        <a href=""> <i class="uil uil-bell"></i> Try Out</a>
                       </li>
                     </ul>
                     <a href="#" @click="logout" class="nav-author__signout">
