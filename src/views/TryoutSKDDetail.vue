@@ -173,6 +173,7 @@
                                           class="button-group d-flex justify-content-end pt-25"
                                         >
                                           <button
+                                            @click.prevent="konfirmasi()"
                                             class="btn btn-primary btn-default btn-squared"
                                           >
                                             Konfirmasi
@@ -215,7 +216,7 @@
 import axios from "axios";
 
 export default {
-  props: ["eid", "expanded"],
+  props: ["user", "eid", "expanded"],
   data() {
     return {
       tryoutskd: [],
@@ -229,6 +230,33 @@ export default {
         this.tryoutskd = response.data;
         console.log(this.tryoutskd);
       });
+  },
+  methods: {
+    konfirmasi() {
+      // let data = [
+      //   {
+      //     email: this.user.email,
+      //   },
+      // ];
+      // console.log(data);
+      // return;
+      axios
+        .post(this.http + "/api/tryoutskd/ikuti/konfirmasi", {
+          email: this.user.email,
+          eid: this.eid,
+          title: this.tryoutskd.title,
+          harga: this.tryoutskd.harga,
+        })
+        .then((response) => {
+          // this.tryoutskd = response.data;
+          console.log(response.data);
+          if (response.data == "berhasil") {
+            window.location.href = "/tryoutskd";
+            // this.$router.push("/tryoutskd");
+          }
+        });
+      console.log("konfirmasi");
+    },
   },
 };
 </script>
