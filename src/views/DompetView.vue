@@ -252,6 +252,7 @@
               </div>
             </div>
 
+            <!-- riwayat transaksi -->
             <div
               class="support-form d-flex justify-content-between align-items-center flex-wrap"
             >
@@ -296,18 +297,18 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>#12</td>
+                    <tr v-for="(hd, index) in historydompet" :key="hd.tsc">
+                      <td>{{ index }}</td>
                       <td>
                         <div class="userDatatable-content--date">
-                          January 20, 2020
+                          {{ hd.date }}
                         </div>
                       </td>
                       <td>
                         <div class="d-flex">
                           <div class="userDatatable-inline-title">
                             <a href="#" class="text-dark fw-500">
-                              <h6>Mengikuti tryout SKD Premium 4</h6>
+                              <h6>{{ hd.title }}</h6>
                             </a>
                           </div>
                         </div>
@@ -315,8 +316,14 @@
                       <td>
                         <div class="userDatatable-content d-inline-block">
                           <span
+                            v-if="hd.koin < 0"
                             class="bg-opacity-danger color-danger userDatatable-content-status active"
-                            >- 100 koin</span
+                            >{{ hd.koin }} koin</span
+                          >
+                          <span
+                            v-else-if="hd.koin > 0"
+                            class="bg-opacity-success color-success userDatatable-content-status active"
+                            >+ 100 koin</span
                           >
                         </div>
                       </td>
@@ -406,6 +413,7 @@ export default {
   data() {
     return {
       tryoutskd: [],
+      historydompet: [],
       koin: "",
     };
   },
@@ -415,6 +423,14 @@ export default {
       .get(this.http + "/api/tryoutskd/getdetail/" + this.eid)
       .then((response) => {
         this.tryoutskd = response.data;
+      });
+
+    axios
+      .get(this.http + "/api/gethistorydompet/" + this.user.email)
+      .then((response) => {
+        // this.tryoutskd = response.data;
+        this.historydompet = response.data;
+        console.log(response.data);
       });
 
     axios

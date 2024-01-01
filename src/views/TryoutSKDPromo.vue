@@ -76,6 +76,7 @@ import axios from "axios";
 
 export default {
   props: {
+    user: Object,
     expanded: Boolean,
   },
   data() {
@@ -84,11 +85,13 @@ export default {
     };
   },
   mounted() {
-    axios.get(this.http + "/api/tryoutskd").then((response) => {
-      this.tryoutskd = response.data;
-      console.log(response.data);
-    });
-    console.log(this.http);
+    axios
+      .get(this.http + "/api/tryoutskd/getpromo/" + this.user.email)
+      .then((response) => {
+        console.log(response.data);
+        this.tryoutskd = response.data;
+      });
+    // console.log(this.http);
   },
 };
 </script>

@@ -3,10 +3,10 @@
     <nav class="navbar navbar-light">
       <div class="navbar-left">
         <div class="logo-area">
-          <a class="navbar-brand" href="index.html">
+          <router-link class="navbar-brand" to="/">
             <img class="dark" src="/img/logo-dark.png" alt="logo" />
             <img class="light" src="/img/logo-white.png" alt="logo" />
-          </a>
+          </router-link>
           <a href="#" @click="expanded()" class="sidebar-toggle">
             <img class="svg" src="/img/svg/align-center-alt.svg" alt="img"
           /></a>

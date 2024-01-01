@@ -36,7 +36,8 @@
   </div>
 
   <div v-else>
-    <GoogleLogin :callback="callback" prompt auto-login />
+    <!-- <GoogleLogin :callback="callback" prompt auto-login /> -->
+    <GoogleLogin :callback="callback" prompt />
   </div>
 </template>
 
@@ -51,13 +52,15 @@ import axios from "axios";
 export default {
   data() {
     return {
-      loggedIn: false,
+      loggedIn: localStorage.getItem("loggedIn"),
       expanded: false,
-      user: null,
+      user: JSON.parse(localStorage.getItem("user")),
+      user_email: localStorage.getItem("user_email"),
       callback: (response) => {
         this.loggedIn = true;
         this.user = decodeCredential(response.credential);
-        this.user = decodeCredential(response.credential);
+        localStorage.setItem("user", JSON.stringify(this.user));
+        localStorage.setItem("loggedIn", true);
       },
     };
   },
@@ -83,14 +86,24 @@ export default {
       });
     },
   },
+  //   watch: {
+  //   input: function () {
+  //     if (isLocalStorage() /* function to detect if localstorage is supported*/) {
+  //       localStorage.setItem('storedData', this.input)
+  //     }
+  //   }
+  // }
 
-  // mounted() {
-  // },
-  // computed: {
-  //   currentRouteName() {
-  //     return this.$route.name;
-  //   },
-  // },
+  mounted() {
+    // let user_email = localStorage.getItem("user_email");
+    console.log("ini user");
+    console.log(this.user_email);
+  },
+  computed: {
+    currentRouteName() {
+      return this.$route.name;
+    },
+  },
 };
 </script>
 
