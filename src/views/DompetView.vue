@@ -24,6 +24,36 @@
       </div>
 
       <div class="row">
+        <div class="dm-notice" v-if="kointidakcukup">
+          <div class="card card-default card-md mb-4">
+            <div class="card-header">
+              <h6>Koin belum mencukupi</h6>
+            </div>
+            <div class="card-body">
+              <div class="dm-notice__content">
+                <div class="dm-notice__top text-center">
+                  <div class="dm-notice__icon bg-info">
+                    <i class="fas fa-exclamation-triangle color-white"></i>
+                  </div>
+                  <div class="dm-notice__text">
+                    <h4>
+                      Untuk mengikuti try out, lakukan top up koin terlebih
+                      dahulu
+                    </h4>
+                  </div>
+                </div>
+
+                <!-- <div class="dm-notice__action d-flex justify-content-center">
+                  <router-link to="/dompet" class="btn btn-sm btn-primary"
+                    >Top up koin</router-link
+                  >
+                </div> -->
+              </div>
+            </div>
+            <!-- ends: .card -->
+          </div>
+        </div>
+
         <div class="mb-30">
           <!-- Card 2 -->
           <div
@@ -409,7 +439,7 @@
 import axios from "axios";
 
 export default {
-  props: ["user", "eid", "expanded"],
+  props: ["user", "eid", "expanded", "kointidakcukup"],
   data() {
     return {
       tryoutskd: [],
@@ -419,6 +449,8 @@ export default {
   },
   mounted() {
     // console.log(this.user);
+    console.log("status koin");
+    console.log(this.kointidakcukup);
     axios
       .get(this.http + "/api/tryoutskd/getdetail/" + this.eid)
       .then((response) => {

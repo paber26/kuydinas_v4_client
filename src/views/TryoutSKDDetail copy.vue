@@ -287,8 +287,6 @@ export default {
           console.log(response.data);
           if (response.data == "koin tidak cukup") {
             console.log(response.data);
-            // this.$router.push("/tryoutskd/lihat/" + this.eid);
-            this.$router.push("/dompet/true");
             this.kointidakcukup = true;
           }
           if (response.data == "berhasil") {

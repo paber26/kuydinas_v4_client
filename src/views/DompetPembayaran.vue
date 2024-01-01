@@ -51,9 +51,23 @@
         </div>
         <div class="col-lg-4 mb-30">
           <div class="job-details-widget">
-            <router-link to="/" class="btn btn-primary w-100"
-              >Lakukan pembayaran</router-link
+            <!-- <button
+              id="paybutton"
+              @click.prevent="pembayaran()"
+              class="bg-success rounded-xl px-1.5 py-1 text-center text-white font-semibold m-2"
             >
+              Lakukan pembayaran
+            </button> -->
+
+            <button
+              id="paybutton"
+              @click.prevent="
+                pembayaran('0424ab02-9f6d-492a-85ac-79e81357d161')
+              "
+              class="btn btn-primary w-100"
+            >
+              Lakukan pembayaran
+            </button>
           </div>
         </div>
       </div>
@@ -80,6 +94,29 @@ export default {
         this.tryoutskd = response.data;
         console.log(this.tryoutskd);
       });
+  },
+  methods: {
+    pembayaran(snapToken) {
+      console.log("lakukan pembayaran");
+      window.snap.pay(snapToken, {
+        onSuccess() {
+          alert("Pembayaran berhasil");
+          window.location.href = "/dompet";
+        },
+        onPending() {
+          window.location.href =
+            "/pembayaran/dompet/" + paket + "/" + snapToken;
+        },
+        onError() {
+          alert("payment failed!");
+          window.location.href =
+            "/pembayaran/dompet/" + paket + "/" + snapToken;
+        },
+        onClose() {
+          window.location.href = "/dompet";
+        },
+      });
+    },
   },
 };
 </script>

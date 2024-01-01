@@ -56,6 +56,12 @@ const routes = [
     component: () => import("../views/DompetView.vue"),
   },
   {
+    path: "/dompet/:kointidakcukup",
+    name: "dompetkointidakcukup",
+    component: () => import("../views/DompetView.vue"),
+    props: true,
+  },
+  {
     path: "/dompet/pembayaran",
     name: "dompet/pembayaran",
     component: () => import("../views/DompetPembayaran.vue"),
