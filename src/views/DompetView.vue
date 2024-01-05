@@ -77,14 +77,16 @@
           </div>
           <!-- Card 2 End  -->
         </div>
+      </div>
 
+      <div class="row" v-if="promokoin">
         <div class="col-lg-4 col-sm-6 mb-30">
           <div class="card h-100">
             <div class="card-body p-30">
               <div class="pricing d-flex align-items-center">
                 <span
                   class="pricing__tag color-primary order-bg-opacity-primary rounded-pill"
-                  >Basic Plan</span
+                  >{{ promokoin[0].title }}</span
                 >
               </div>
               <div class="pricing__price rounded">
@@ -92,25 +94,38 @@
                   class="pricing_value display-3 color-dark d-flex align-items-center text-capitalize fw-600 mb-1"
                 >
                   <sup><span class="nav-icon uil uil-pricetag-alt"></span></sup
-                  >200
+                  >{{ promokoin[0].koin }}
                   <small class="pricing_user">koin</small>
                 </p>
               </div>
               <div class="pricing__features">
                 <ul class="text-start">
-                  <li><span class="fa fa-check"></span>Harga Rp10.000</li>
+                  <li>
+                    <span class="fa fa-check"></span>Harga Rp{{
+                      promokoin[0].harga
+                    }}
+                  </li>
 
-                  <li><span class="fa fa-check"></span>Mendapat 200 koin</li>
+                  <li>
+                    <span class="fa fa-check"></span>Mendapat
+                    {{ promokoin[0].koin }} koin
+                  </li>
                 </ul>
               </div>
             </div>
             <div class="price_action d-flex pb-30 ps-30">
-              <router-link
-                to="/dompet/pembayaran"
+              <button
+                @click="
+                  pilihpaket(
+                    promokoin[0].title,
+                    promokoin[0].harga,
+                    promokoin[0].koin
+                  )
+                "
                 class="btn btn-primary btn-default btn-squared text-capitalize px-30"
               >
                 Pilih
-              </router-link>
+              </button>
             </div>
           </div>
           <!-- End: .card -->
@@ -122,7 +137,7 @@
               <div class="pricing d-flex align-items-center">
                 <span
                   class="pricing__tag color-secondary order-bg-opacity-secondary rounded-pill"
-                  >Business</span
+                  >{{ promokoin[1].title }}</span
                 >
               </div>
               <div class="pricing__price rounded">
@@ -130,20 +145,37 @@
                   class="pricing_value display-3 color-dark d-flex align-items-center text-capitalize fw-600 mb-1"
                 >
                   <sup><span class="nav-icon uil uil-pricetag-alt"></span></sup
-                  >375
+                  >{{ promokoin[1].koin }}
                   <small class="pricing_user">koin</small>
                 </p>
               </div>
               <div class="pricing__features">
-                <ul>
-                  <li><span class="fa fa-check"></span>Harga Rp15.000</li>
-                  <li><span class="fa fa-check"></span>Diskon 20%</li>
-                  <li><span class="fa fa-check"></span>Mendapat 375 koin</li>
+                <ul class="text-start">
+                  <li>
+                    <span class="fa fa-check"></span>Harga Rp{{
+                      promokoin[1].harga
+                    }}
+                  </li>
+                  <li>
+                    <span class="fa fa-check"></span>Diskon
+                    {{ promokoin[1].diskon }}%
+                  </li>
+                  <li>
+                    <span class="fa fa-check"></span>Mendapat
+                    {{ promokoin[1].koin }} koin
+                  </li>
                 </ul>
               </div>
             </div>
             <div class="price_action d-flex pb-30 ps-30">
               <button
+                @click="
+                  pilihpaket(
+                    promokoin[1].title,
+                    promokoin[1].harga,
+                    promokoin[1].koin
+                  )
+                "
                 class="btn btn-secondary btn-default btn-squared text-capitalize px-30"
               >
                 Pilih
@@ -159,7 +191,7 @@
               <div class="pricing d-flex align-items-center">
                 <span
                   class="pricing__tag color-success order-bg-opacity-success rounded-pill"
-                  >Enterprise</span
+                  >{{ promokoin[2].title }}</span
                 >
               </div>
               <div class="pricing__price rounded">
@@ -167,20 +199,37 @@
                   class="pricing_value display-3 color-dark d-flex align-items-center text-capitalize fw-600 mb-1"
                 >
                   <sup><span class="nav-icon uil uil-pricetag-alt"></span></sup
-                  >600
+                  >{{ promokoin[2].koin }}
                   <small class="pricing_user">koin</small>
                 </p>
               </div>
               <div class="pricing__features">
-                <ul>
-                  <li><span class="fa fa-check"></span>Harga Rp21.000</li>
-                  <li><span class="fa fa-check"></span>Diskon 30%</li>
-                  <li><span class="fa fa-check"></span>Mendapat 600 koin</li>
+                <ul class="text-start">
+                  <li>
+                    <span class="fa fa-check"></span>Harga Rp{{
+                      promokoin[2].harga
+                    }}
+                  </li>
+                  <li>
+                    <span class="fa fa-check"></span>Diskon
+                    {{ promokoin[2].diskon }}%
+                  </li>
+                  <li>
+                    <span class="fa fa-check"></span>Mendapat
+                    {{ promokoin[2].koin }} koin
+                  </li>
                 </ul>
               </div>
             </div>
             <div class="price_action d-flex pb-30 ps-30">
               <button
+                @click="
+                  pilihpaket(
+                    promokoin[2].title,
+                    promokoin[2].harga,
+                    promokoin[2].koin
+                  )
+                "
                 class="btn btn-success btn-default btn-squared text-capitalize px-30"
               >
                 Pilih
@@ -190,7 +239,9 @@
           <!-- End: .card -->
         </div>
         <!-- End: .col -->
+      </div>
 
+      <div class="row">
         <div class="col-12">
           <div class="support-ticket-system">
             <div
@@ -444,13 +495,12 @@ export default {
     return {
       tryoutskd: [],
       historydompet: [],
+      promokoin: false,
       koin: "",
     };
   },
   mounted() {
-    // console.log(this.user);
-    console.log("status koin");
-    console.log(this.kointidakcukup);
+    console.log(this.promokoin == null);
     axios
       .get(this.http + "/api/tryoutskd/getdetail/" + this.eid)
       .then((response) => {
@@ -460,9 +510,7 @@ export default {
     axios
       .get(this.http + "/api/gethistorydompet/" + this.user.email)
       .then((response) => {
-        // this.tryoutskd = response.data;
         this.historydompet = response.data;
-        console.log(response.data);
       });
 
     axios
@@ -470,6 +518,29 @@ export default {
       .then((response) => {
         this.koin = response.data["koin"];
       });
+
+    axios.get(this.http + "/api/dompet/getpromo").then((response) => {
+      this.promokoin = response.data;
+    });
+  },
+  methods: {
+    pilihpaket(paket, harga, koin) {
+      axios
+        .post(this.http + "/api/dompet/pilihpaket", {
+          email: this.user.email,
+          paket: paket,
+          harga: harga,
+          koin: koin,
+        })
+        .then((response) => {
+          if (response.data[0] == "berhasil") {
+            let snapToken = response.data[1];
+            window.location.href = "/dompet/pembayaran/" + snapToken;
+
+            // this.$router.push("/dompet/pembayaran/" + snapToken);
+          }
+        });
+    },
   },
 };
 </script>

@@ -41,9 +41,16 @@
               </p>
               <div class="pricing__features">
                 <ul class="text-start">
-                  <li><span class="fa fa-check"></span>Harga Rp10.000</li>
+                  <li>
+                    <span class="fa fa-check"></span>Harga Rp{{
+                      detailpromokoin.nominal
+                    }}
+                  </li>
 
-                  <li><span class="fa fa-check"></span>Mendapat 200 koin</li>
+                  <li>
+                    <span class="fa fa-check"></span>Mendapat
+                    {{ detailpromokoin.koin }} koin
+                  </li>
                 </ul>
               </div>
             </div>
@@ -61,9 +68,7 @@
 
             <button
               id="paybutton"
-              @click.prevent="
-                pembayaran('0424ab02-9f6d-492a-85ac-79e81357d161')
-              "
+              @click.prevent="pembayaran()"
               class="btn btn-primary w-100"
             >
               Lakukan pembayaran
@@ -80,40 +85,50 @@
 import axios from "axios";
 
 export default {
-  props: ["eid", "expanded"],
+  props: ["user", "expanded", "snapToken"],
   data() {
     return {
-      tryoutskd: [],
+      // tryoutskd: [],
+      detailpromokoin: {},
     };
   },
   mounted() {
-    console.log(this.eid);
+    console.log("coba tes dompet");
+    // console.log(this.eid);
     axios
-      .get(this.http + "/api/tryoutskd/getdetail/" + this.eid)
+      .get(
+        this.http +
+          "/api/dompet/getdetail/promokoin/" +
+          this.user.email +
+          "/" +
+          this.snapToken
+      )
       .then((response) => {
-        this.tryoutskd = response.data;
-        console.log(this.tryoutskd);
+        // this.tryoutskd = response.data;
+        this.detailpromokoin = response.data;
+        // console.log("coba dulu");
+        // console.log(response.data);
       });
   },
   methods: {
-    pembayaran(snapToken) {
+    pembayaran() {
       console.log("lakukan pembayaran");
-      window.snap.pay(snapToken, {
+      console.log(this.snapToken);
+      window.snap.pay(this.snapToken, {
         onSuccess() {
           alert("Pembayaran berhasil");
           window.location.href = "/dompet";
         },
         onPending() {
-          window.location.href =
-            "/pembayaran/dompet/" + paket + "/" + snapToken;
+          window.location.href = "/dompet";
         },
         onError() {
           alert("payment failed!");
-          window.location.href =
-            "/pembayaran/dompet/" + paket + "/" + snapToken;
+          window.location.href = "/dompet";
         },
         onClose() {
-          window.location.href = "/dompet";
+          window.location.href = "/dompet/pembayaran/" + this.snapToken;
+          // window.location.href = "/dompet";
         },
       });
     },

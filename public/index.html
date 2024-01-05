@@ -141,25 +141,25 @@
 
       payButton.addEventListener("click", function () {
         console.log("terklik");
-        // window.snap.pay(snapToken, {
-        //   onSuccess: function (result) {
-        //     alert("Pembayaran berhasil");
-        //     window.location.href = "/dompet";
-        //   },
-        //   onPending: function (result) {
-        //     window.location.href =
-        //       "/pembayaran/dompet/" + paket + "/" + snapToken;
-        //   },
-        //   onError: function (result) {
-        //     alert("payment failed!");
-        //     window.location.href =
-        //       "/pembayaran/dompet/" + paket + "/" + snapToken;
-        //   },
-        //   onClose: function () {
-        //     window.location.href =
-        //       "/pembayaran/dompet/" + paket + "/" + snapToken;
-        //   },
-        // });
+        window.snap.pay(snapToken, {
+          onSuccess: function (result) {
+            alert("Pembayaran berhasil");
+            window.location.href = "/dompet";
+          },
+          onPending: function (result) {
+            window.location.href =
+              "/pembayaran/dompet/" + paket + "/" + snapToken;
+          },
+          onError: function (result) {
+            alert("payment failed!");
+            window.location.href =
+              "/pembayaran/dompet/" + paket + "/" + snapToken;
+          },
+          onClose: function () {
+            window.location.href =
+              "/pembayaran/dompet/" + paket + "/" + snapToken;
+          },
+        });
       });
     </script>
     <script src="<%= BASE_URL %>assets/vendor_assets/js/jquery/jquery-3.5.1.min.js"></script>

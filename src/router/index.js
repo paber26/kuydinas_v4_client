@@ -62,9 +62,10 @@ const routes = [
     props: true,
   },
   {
-    path: "/dompet/pembayaran",
+    path: "/dompet/pembayaran/:snapToken",
     name: "dompet/pembayaran",
     component: () => import("../views/DompetPembayaran.vue"),
+    props: true,
   },
   {
     path: "/materiskd",
