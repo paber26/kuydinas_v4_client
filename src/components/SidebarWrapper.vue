@@ -70,16 +70,15 @@ export default {
     axios
       .get(this.http + "/api/getinfoakun/" + this.user.email)
       .then((response) => {
-        // this.tryoutskd = response.data;
-        this.koin = response.data["koin"];
-        console.log(response.data);
+        if (response.data["koin"] == null) {
+          this.koin = 0;
+        } else {
+          this.koin = response.data["koin"];
+        }
       });
-    console.log("tampilkan");
-    console.log(this.user);
   },
   computed: {
     currentRouteName() {
-      // console.log(this.currentRouteName);
       return "/" + this.$router.currentRoute.value.path.split("/")[1];
     },
   },

@@ -59,8 +59,10 @@ export default {
       callback: (response) => {
         this.loggedIn = true;
         this.user = decodeCredential(response.credential);
+        console.log(this.user);
         localStorage.setItem("user", JSON.stringify(this.user));
         localStorage.setItem("loggedIn", true);
+        this.cekAkun();
       },
     };
   },
@@ -78,24 +80,36 @@ export default {
         this.expanded = !this.expanded;
       }
     },
-    getinfouser() {
-      axios.get(this.http + "/api/getinfouser").then((response) => {
-        // this.tryoutskd = response.data;
-        console.log(response.data);
-        return response.data;
-      });
+    cekAkun() {
+      console.log(this.user.email);
+      axios
+        .get(this.http + "/api/getinfoakun/" + this.user.email)
+        .then((response) => {
+          console.log(response.data == "");
+          if (response.data == "") {
+            axios
+              .post(this.http + "/api/tambahakun", {
+                email: this.user.email,
+                name: this.user.name,
+                picture: this.user.picture,
+              })
+              .then((response) => {
+                // this.tryoutskd = response.data;
+                console.log("coba tes tambahakun");
+                console.log(response.data);
+                console.log("coba tes tambahakun");
+                // return response.data;
+              });
+          }
+          console.log(response.data);
+          // return response.data;
+        });
+      console.log("coba cek akun");
     },
   },
-  //   watch: {
-  //   input: function () {
-  //     if (isLocalStorage() /* function to detect if localstorage is supported*/) {
-  //       localStorage.setItem('storedData', this.input)
-  //     }
-  //   }
-  // }
-
   mounted() {
     // let user_email = localStorage.getItem("user_email");
+    this.cekAkun();
     console.log("ini user");
     console.log(this.user_email);
   },

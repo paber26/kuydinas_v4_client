@@ -256,12 +256,10 @@ export default {
     };
   },
   mounted() {
-    console.log(this.eid);
     axios
       .get(this.http + "/api/tryoutskd/getdetail/" + this.eid)
       .then((response) => {
         this.tryoutskd = response.data;
-        console.log(this.tryoutskd);
       });
   },
   methods: {
@@ -271,7 +269,6 @@ export default {
       //     email: this.user.email,
       //   },
       // ];
-      // console.log(data);
       // return;
       // document.getElementById('')
       this.$refs.Close.click();
@@ -284,9 +281,7 @@ export default {
         })
         .then((response) => {
           // this.tryoutskd = response.data;
-          console.log(response.data);
           if (response.data == "koin tidak cukup") {
-            console.log(response.data);
             // this.$router.push("/tryoutskd/lihat/" + this.eid);
             this.$router.push("/dompet/true");
             this.kointidakcukup = true;
@@ -296,7 +291,6 @@ export default {
             // this.$router.push("/tryoutskd");
           }
         });
-      console.log("konfirmasi");
     },
   },
 };

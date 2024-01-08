@@ -1,4 +1,5 @@
-import { createRouter, createWebHistory } from "vue-router";
+// import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 const routes = [
   {
     path: "/",
@@ -95,7 +96,10 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  // mode: "history",
+  // history: createWebHistory("/"),
+  // history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes,
 });
 

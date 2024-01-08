@@ -244,21 +244,17 @@ export default {
     };
   },
   // mounted() {
-  //   console.log(this.user);
   //   axios
   //     .get(this.http + "/api/tryoutskd/pengerjaan/" + this.user.email)
   //     .then((response) => {
   //       this.tryoutskd = response.data;
-  //       console.log(response.data);
   //     });
   mounted() {
     axios
       .get(this.http + "/api/tryoutskd/getteraktivasi/" + this.user.email)
       .then((response) => {
         this.tryoutskd = response.data;
-        console.log(response.data);
       });
-    console.log(this.http);
   },
 };
 </script>

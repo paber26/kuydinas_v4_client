@@ -250,7 +250,6 @@ export default {
   },
   mounted() {
     axios.get(this.http + "/api/getakun").then((response) => {
-      console.log(response.data);
       this.akuns = response.data;
     });
   },

@@ -106,12 +106,10 @@ export default {
     };
   },
   mounted() {
-    console.log(this.eid);
     axios
       .get(this.http + "/api/tryoutskd/getdetail/" + this.eid)
       .then((response) => {
         this.tryoutskd = response.data;
-        console.log(this.tryoutskd);
       });
   },
 };

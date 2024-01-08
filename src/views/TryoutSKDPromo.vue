@@ -88,10 +88,8 @@ export default {
     axios
       .get(this.http + "/api/tryoutskd/getpromo/" + this.user.email)
       .then((response) => {
-        console.log(response.data);
         this.tryoutskd = response.data;
       });
-    // console.log(this.http);
   },
 };
 </script>

@@ -93,8 +93,6 @@ export default {
     };
   },
   mounted() {
-    console.log("coba tes dompet");
-    // console.log(this.eid);
     axios
       .get(
         this.http +
@@ -106,14 +104,10 @@ export default {
       .then((response) => {
         // this.tryoutskd = response.data;
         this.detailpromokoin = response.data;
-        // console.log("coba dulu");
-        // console.log(response.data);
       });
   },
   methods: {
     pembayaran() {
-      console.log("lakukan pembayaran");
-      console.log(this.snapToken);
       window.snap.pay(this.snapToken, {
         onSuccess() {
           alert("Pembayaran berhasil");

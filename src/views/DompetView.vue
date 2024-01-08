@@ -404,7 +404,7 @@
                           <span
                             v-else-if="hd.koin > 0"
                             class="bg-opacity-success color-success userDatatable-content-status active"
-                            >+ 100 koin</span
+                            >+ {{ hd.koin }} koin</span
                           >
                         </div>
                       </td>
@@ -500,7 +500,6 @@ export default {
     };
   },
   mounted() {
-    console.log(this.promokoin == null);
     axios
       .get(this.http + "/api/tryoutskd/getdetail/" + this.eid)
       .then((response) => {
@@ -516,7 +515,11 @@ export default {
     axios
       .get(this.http + "/api/getinfoakun/" + this.user.email)
       .then((response) => {
-        this.koin = response.data["koin"];
+        if (response.data["koin"] == null) {
+          this.koin = 0;
+        } else {
+          this.koin = response.data["koin"];
+        }
       });
 
     axios.get(this.http + "/api/dompet/getpromo").then((response) => {
@@ -535,9 +538,9 @@ export default {
         .then((response) => {
           if (response.data[0] == "berhasil") {
             let snapToken = response.data[1];
-            window.location.href = "/dompet/pembayaran/" + snapToken;
+            // window.location.href = "/dompet/pembayaran/" + snapToken;
 
-            // this.$router.push("/dompet/pembayaran/" + snapToken);
+            this.$router.push("/dompet/pembayaran/" + snapToken);
           }
         });
     },

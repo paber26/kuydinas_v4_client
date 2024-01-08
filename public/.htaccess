@@ -1,0 +1,38 @@
+
+# RewriteEngine on
+# RewriteCond %{HTTPS} off
+# RewriteCond %{HTTP:X-Forwarded-SSL} !on
+# RewriteCond %{HTTP_HOST} ^kuydinas\.id$ [OR]
+# RewriteCond %{HTTP_HOST} ^www\.kuydinas\.id$
+# RewriteRule ^/?$ "https\:\/\/kuydinas\.id\/" [R=301,L]
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# <IfModule mod_negotiation.c>
+#   Options -MultiViews
+# </IfModule>
+
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteBase /
+#   RewriteRule ^index\.html$ - [L]
+#   RewriteCond %{REQUEST_FILENAME} !-f
+#   RewriteCond %{REQUEST_FILENAME} !-d
+#   RewriteRule . /index.html [L]
+# </IfModule>
+
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteBase /dist
+# RewriteRule ^dist/index\.html$ - [L]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule . dist/index.html [L]
+# </IfModule>
