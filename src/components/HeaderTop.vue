@@ -81,21 +81,6 @@ export default {
       loggedIn: true,
     };
   },
-  // mounted() {
-  //   let currentPath = this.$router.currentRoute.value.path.split("/");
-  //   let scurrentPath = this.$router.currentRoute.value.path.split("/");
-  //   console.log("coba di header");
-  //   console.log(scurrentPath);
-  //   console.log("coba di header");
-  // },
-
-  // created() {
-  //   window.addEventListener("beforeunload", function (event) {
-  //     // event.returnValue = "Write something";
-  //     window.location.href = "/dompet";
-  //   });
-  // },
-
   methods: {
     logout() {
       googleLogout();

@@ -2,11 +2,6 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 
-// import axios from "axios";
-// Vue.prototype.$http = axios;
-
-// axios.defaults.baseURL = "http://127.0.0.1:8000";
-
 import vue3GoogleLogin from "vue3-google-login";
 
 // production
@@ -23,8 +18,8 @@ const app = createApp(App)
   })
   .use(router);
 
-// app.config.globalProperties.http = "https://backend.kuydinas.id";
-app.config.globalProperties.http = "http://127.0.0.1:8001";
+app.config.globalProperties.http = "https://backend.kuydinas.id";
+// app.config.globalProperties.http = "http://127.0.0.1:8001";
 
 app.mount("#app");
 

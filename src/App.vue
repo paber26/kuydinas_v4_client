@@ -59,7 +59,6 @@ export default {
       callback: (response) => {
         this.loggedIn = true;
         this.user = decodeCredential(response.credential);
-        console.log(this.user);
         localStorage.setItem("user", JSON.stringify(this.user));
         localStorage.setItem("loggedIn", true);
         this.cekAkun();
@@ -81,11 +80,14 @@ export default {
       }
     },
     cekAkun() {
+      console.log("ini mau cek akun");
       console.log(this.user.email);
       axios
         .get(this.http + "/api/getinfoakun/" + this.user.email)
         .then((response) => {
-          console.log(response.data == "");
+          // console.log("dapat info apaan");
+          // console.log(response.data);
+          // console.log("dapat info apaan");
           if (response.data == "") {
             axios
               .post(this.http + "/api/tambahakun", {
@@ -95,24 +97,16 @@ export default {
               })
               .then((response) => {
                 // this.tryoutskd = response.data;
-                console.log("coba tes tambahakun");
-                console.log(response.data);
-                console.log("coba tes tambahakun");
                 // return response.data;
+                console.log(response.data);
               });
           }
-          console.log(response.data);
           // return response.data;
         });
-      console.log("coba cek akun");
+      console.log("ini mau cek akun");
     },
   },
-  mounted() {
-    // let user_email = localStorage.getItem("user_email");
-    this.cekAkun();
-    console.log("ini user");
-    console.log(this.user_email);
-  },
+  mounted() {},
   computed: {
     currentRouteName() {
       return this.$route.name;
