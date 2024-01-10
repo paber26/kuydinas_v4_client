@@ -5,15 +5,17 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="breadcrumb-main">
-              <h4 class="text-capitalize breadcrumb-title">My profile</h4>
+              <h4 class="text-capitalize breadcrumb-title">Edit Profil</h4>
               <div class="breadcrumb-action justify-content-center flex-wrap">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                      <a href="#"><i class="uil uil-estate"></i>Home</a>
+                      <router-link to="/"
+                        ><i class="uil uil-estate"></i>Home</router-link
+                      >
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                      My profile
+                      Edit Profil
                     </li>
                   </ol>
                 </nav>

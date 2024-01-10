@@ -538,9 +538,10 @@ export default {
         .then((response) => {
           if (response.data[0] == "berhasil") {
             let snapToken = response.data[1];
-            // window.location.href = "/dompet/pembayaran/" + snapToken;
+            window.location.href = "#/dompet/pembayaran/" + snapToken;
+            console.log("jendela yang sama");
 
-            this.$router.push("/dompet/pembayaran/" + snapToken);
+            // this.$router.push("/dompet/pembayaran/" + snapToken);
           }
         });
     },

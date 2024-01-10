@@ -92,11 +92,15 @@ export default {
                 this.user = response.data;
                 localStorage.setItem("user", JSON.stringify(this.user));
                 localStorage.setItem("loggedIn", true);
+                window.location.href = "#/profil/edit";
               });
           } else {
             this.user = response.data;
             localStorage.setItem("user", JSON.stringify(this.user));
             localStorage.setItem("loggedIn", true);
+            if (response.data.nowa == "-") {
+              window.location.href = "#/profil/edit";
+            }
           }
         });
     },

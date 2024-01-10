@@ -28,11 +28,7 @@
                 <div class="dropdown-wrapper">
                   <div class="nav-author__info">
                     <div class="author-img">
-                      <img
-                        src="/img/author-nav.jpg"
-                        alt=""
-                        class="rounded-circle"
-                      />
+                      <img :src="user.picture" alt="" class="rounded-circle" />
                     </div>
                     <div>
                       <h6>{{ user.name }}</h6>

@@ -120,10 +120,10 @@ export default {
           alert("payment failed!");
           window.location.href = "/dompet";
         },
-        onClose() {
-          window.location.href = "/dompet/pembayaran/" + this.snapToken;
-          // window.location.href = "/dompet";
-        },
+        // onClose() {
+        //   window.location.href = "#/dompet/pembayaran/" + this.snapToken;
+        //   // window.location.href = "/dompet";
+        // },
       });
     },
   },
