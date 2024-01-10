@@ -42,8 +42,13 @@
                   <div class="nav-author__options">
                     <ul class="text-start">
                       <li>
+                        <router-link to="/profil">
+                          <i class="uil uil-user"></i> Profil</router-link
+                        >
+                      </li>
+                      <li>
                         <router-link to="/dompet">
-                          <i class="uil uil-user"></i> Dompet</router-link
+                          <i class="uil uil-wallet"></i> Dompet</router-link
                         >
                       </li>
                       <li>

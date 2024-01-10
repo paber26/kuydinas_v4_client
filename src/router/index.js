@@ -7,6 +7,16 @@ const routes = [
     component: () => import("../views/DashboardView.vue"),
   },
   {
+    path: "/profil",
+    name: "profil",
+    component: () => import("../views/ProfilView.vue"),
+  },
+  {
+    path: "/profil/edit",
+    name: "profiledit",
+    component: () => import("../views/ProfilEdit.vue"),
+  },
+  {
     path: "/promotryoutskd",
     name: "promotryoutskd",
     component: () => import("../views/TryoutSKDPromo.vue"),

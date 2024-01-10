@@ -59,8 +59,6 @@ export default {
       callback: (response) => {
         this.loggedIn = true;
         this.user = decodeCredential(response.credential);
-        localStorage.setItem("user", JSON.stringify(this.user));
-        localStorage.setItem("loggedIn", true);
         this.cekAkun();
       },
     };
@@ -80,14 +78,9 @@ export default {
       }
     },
     cekAkun() {
-      console.log("ini mau cek akun");
-      console.log(this.user.email);
       axios
         .get(this.http + "/api/getinfoakun/" + this.user.email)
         .then((response) => {
-          // console.log("dapat info apaan");
-          // console.log(response.data);
-          // console.log("dapat info apaan");
           if (response.data == "") {
             axios
               .post(this.http + "/api/tambahakun", {
@@ -96,14 +89,16 @@ export default {
                 picture: this.user.picture,
               })
               .then((response) => {
-                // this.tryoutskd = response.data;
-                // return response.data;
-                console.log(response.data);
+                this.user = response.data;
+                localStorage.setItem("user", JSON.stringify(this.user));
+                localStorage.setItem("loggedIn", true);
               });
+          } else {
+            this.user = response.data;
+            localStorage.setItem("user", JSON.stringify(this.user));
+            localStorage.setItem("loggedIn", true);
           }
-          // return response.data;
         });
-      console.log("ini mau cek akun");
     },
   },
   mounted() {},
