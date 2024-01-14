@@ -148,16 +148,17 @@
                         </div>
                       </td>
                       <td>
-                        <router-link
+                        <a
+                          href="#"
+                          @click.prevent="kerjakan(tskd.eid)"
                           v-if="tskd.status == null"
-                          :to="'/pengerjaan/tryoutskd/' + tskd.eid"
                           class="userDatatable-content d-inline-block"
                         >
                           <span
                             class="userDatatable-content-status bg-opacity-primary color-primary"
                             >Kerjakan</span
                           >
-                        </router-link>
+                        </a>
                         <router-link
                           v-else-if="tskd.status == 'ongoing'"
                           :to="'/pengerjaan/tryoutskd/' + tskd.eid"
@@ -255,6 +256,24 @@ export default {
       .then((response) => {
         this.tryoutskd = response.data;
       });
+  },
+  methods: {
+    kerjakan(eid) {
+      axios
+        .get(
+          this.http + "/api/tryoutskd/kerjakan/" + this.user.email + "/" + eid
+        )
+        .then((response) => {
+          if (response.data == "berhasil") {
+            window.location.href =
+              // "https://pengerjaan.kuydinas.id/" + "/" + this.user.email + eid;
+              "http://localhost:8080/#" + "/" + this.user.email + "/" + eid;
+          }
+          console.log(response.data);
+          // this.tryoutskd = response.data;
+        });
+      // window.location.href = "#/dompet/pembayaran/" + snapToken;
+    },
   },
 };
 </script>

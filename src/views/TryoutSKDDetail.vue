@@ -271,6 +271,7 @@ export default {
       // ];
       // return;
       // document.getElementById('')
+      console.log("coba konfirm");
       this.$refs.Close.click();
       axios
         .post(this.http + "/api/tryoutskd/ikuti/konfirmasi", {
@@ -280,14 +281,15 @@ export default {
           harga: this.tryoutskd.harga,
         })
         .then((response) => {
+          console.log(response.data);
           // this.tryoutskd = response.data;
           if (response.data == "koin tidak cukup") {
             // this.$router.push("/tryoutskd/lihat/" + this.eid);
-            this.$router.push("/dompet/true");
+            this.$router.push("#/dompet/true");
             this.kointidakcukup = true;
           }
           if (response.data == "berhasil") {
-            window.location.href = "/tryoutskd";
+            window.location.href = "#/tryoutskd";
             // this.$router.push("/tryoutskd");
           }
         });

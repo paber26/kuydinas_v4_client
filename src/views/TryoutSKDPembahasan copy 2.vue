@@ -108,8 +108,15 @@
             aria-labelledby="ap-overview-tab"
           >
             <div class="row">
-              <div class="mb-25" v-for="pmb in pembahasans" :key="pmb.id">
+              <!-- Soal dan Pembahasan -->
+              <!-- <div class="mb-25" v-for="sn in range(pembahasans.length)" :key="sn.id"> -->
+              <div
+                class="mb-25"
+                v-for="(pmb, index) in pembahasans"
+                :key="pmb.id"
+              >
                 <div
+                  v-if="tunjuk == 'semua'"
                   class="user-group radius-xl media-ui media-ui--early pt-30 pb-25"
                 >
                   <div class="px-30">
@@ -162,8 +169,7 @@
                           <div class="media-ui__start">
                             <span class="color-light fs-12">Jawaban kamu</span>
                             <p class="fs-14 fw-500 color-dark mb-0">
-                              {{ opsi[pmb.sn - 1].option }}
-                              <!-- {{ opsi[0] }} -->
+                              {{ opsi[index].option }}
                             </p>
                           </div>
                         </div>
@@ -206,6 +212,7 @@ export default {
       pembahasanlengkap: [],
       pembahasans: [],
       opsi: [],
+      tunjuk: "semua",
     };
   },
   mounted() {
