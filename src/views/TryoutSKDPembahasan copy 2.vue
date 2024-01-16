@@ -188,6 +188,70 @@
                     </div>
                   </div>
                 </div>
+                <div
+                  v-else-if="tunjuk == 'benar' && pmb.choose == pmb.ans"
+                  class="user-group radius-xl media-ui media-ui--early pt-30 pb-25"
+                >
+                  <div class="px-30">
+                    <div
+                      class="media user-group-media d-flex justify-content-between"
+                    >
+                      <div
+                        class="media-body d-flex align-items-center flex-wrap my-sm-0 my-n2"
+                      >
+                        <a href="#">
+                          <h6
+                            class="mt-0 fw-500 user-group media-ui__title bg-transparent"
+                          >
+                            Soal nomor {{ pmb.sn }}
+                          </h6>
+                        </a>
+                        <span
+                          v-if="pmb.choose == pmb.ans"
+                          class="my-sm-0 my-2 media-badge text-uppercase color-white bg-success"
+                          >Benar</span
+                        >
+                      </div>
+                    </div>
+
+                    <div class="user-group-people mt-15 text-start">
+                      <div class="user-group-project">
+                        <div
+                          class="d-flex align-items-center user-group-progress-top"
+                        >
+                          <div class="media-ui__start">
+                            <p
+                              v-html="pmb.qns"
+                              class="fs-14 fw-500 color-dark mb-0"
+                            ></p>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex align-items-center user-group-progress-top"
+                        >
+                          <div class="media-ui__start">
+                            <span class="color-light fs-12">Jawaban kamu</span>
+                            <p class="fs-14 fw-500 color-dark mb-0">
+                              <!-- {{ opsi[index].option }} opsinya {{ pmb[sn] }} -->
+                              tes jo koak
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex align-items-center user-group-progress-top"
+                        >
+                          <div class="media-ui__start">
+                            <span class="color-light fs-12">Pembahasan</span>
+                            <p
+                              v-html="pmb.exp"
+                              class="fs-14 fw-500 color-dark mb-0"
+                            ></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

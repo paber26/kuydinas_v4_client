@@ -70,6 +70,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import { googleLogout } from "vue3-google-login";
 
 export default {
@@ -81,6 +82,22 @@ export default {
     return {
       loggedIn: true,
     };
+  },
+  mounted() {
+    axios
+      .get(this.http + "/api/tryoutskd/cekpengerjaan/" + this.user.email)
+      .then((response) => {
+        console.log(response.data);
+        if (response.data != "tidak ada") {
+          window.location.href =
+            "http://localhost:8081/#" +
+            "/" +
+            this.user.email +
+            "/" +
+            response.data;
+        }
+        // this.tryoutskd = response.data;
+      });
   },
   methods: {
     logout() {

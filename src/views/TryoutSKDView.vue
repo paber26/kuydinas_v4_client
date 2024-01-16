@@ -128,12 +128,9 @@
                       <td>
                         <div class="d-flex">
                           <div class="userDatatable-inline-title">
-                            <router-link
-                              :to="'/tryoutskd/detail/' + tskd.eid"
-                              class="text-dark fw-500"
-                            >
+                            <div class="text-dark fw-500">
                               <h6>{{ tskd.title }}</h6>
-                            </router-link>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -244,12 +241,6 @@ export default {
       tryoutskd: [],
     };
   },
-  // mounted() {
-  //   axios
-  //     .get(this.http + "/api/tryoutskd/pengerjaan/" + this.user.email)
-  //     .then((response) => {
-  //       this.tryoutskd = response.data;
-  //     });
   mounted() {
     axios
       .get(this.http + "/api/tryoutskd/getteraktivasi/" + this.user.email)
@@ -266,13 +257,9 @@ export default {
         .then((response) => {
           if (response.data == "berhasil") {
             window.location.href =
-              // "https://pengerjaan.kuydinas.id/" + "/" + this.user.email + eid;
-              "http://localhost:8080/#" + "/" + this.user.email + "/" + eid;
+              "http://localhost:8081/#" + "/" + this.user.email + "/" + eid;
           }
-          console.log(response.data);
-          // this.tryoutskd = response.data;
         });
-      // window.location.href = "#/dompet/pembayaran/" + snapToken;
     },
   },
 };

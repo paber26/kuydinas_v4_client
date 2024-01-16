@@ -27,6 +27,172 @@
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-xxl-3 col-lg-4 col-md-6 mb-25">
+          <!-- Profile Acoount -->
+          <div class="card">
+            <div class="card-body text-center pt-30 px-25 pb-0">
+              <div class="account-profile-cards">
+                <div class="ap-img d-flex justify-content-center">
+                  <!-- Profile picture image-->
+                  <img
+                    class="ap-img__main bg-opacity-primary wh-120 rounded-circle mb-3"
+                    src="img/tm1.png"
+                    alt="profile"
+                  />
+                </div>
+                <div class="ap-nameAddress">
+                  <h6 class="ap-nameAddress__title">Duran Clayton</h6>
+                  <p class="ap-nameAddress__subTitle fs-14 pt-1 m-0">
+                    Sulawesi Selatan
+                  </p>
+                </div>
+                <div
+                  class="ap-button account-profile-cards__button button-group d-flex justify-content-center flex-wrap pt-20"
+                >
+                  <button
+                    type="button"
+                    class="border text-capitalize px-25 color-gray transparent follow radius-md"
+                  >
+                    <span class="las la-user-plus follow-icon"></span>Lihat
+                    Profil
+                  </button>
+                </div>
+              </div>
+
+              <div class="card-footer mt-20 pt-20 pb-20 px-0 bg-transparent">
+                <div
+                  class="profile-overview d-flex justify-content-between flex-wrap"
+                >
+                  <div class="po-details">
+                    <h6 class="po-details__title">120</h6>
+                    <span class="po-details__sTitle">TWK</span>
+                  </div>
+                  <div class="po-details">
+                    <h6 class="po-details__title">140</h6>
+                    <span class="po-details__sTitle">TIU</span>
+                  </div>
+                  <div class="po-details">
+                    <h6 class="po-details__title">182</h6>
+                    <span class="po-details__sTitle">TKP</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Profile Acoount End -->
+        </div>
+        <div class="col-xxl-3 col-lg-4 col-md-6 mb-25">
+          <!-- Profile Acoount -->
+          <div class="card">
+            <div class="card-body text-center pt-30 px-25 pb-0">
+              <div class="account-profile-cards">
+                <div class="ap-img d-flex justify-content-center">
+                  <!-- Profile picture image-->
+                  <img
+                    class="ap-img__main bg-opacity-primary wh-120 rounded-circle mb-3"
+                    src="img/tm1.png"
+                    alt="profile"
+                  />
+                </div>
+                <div class="ap-nameAddress">
+                  <h6 class="ap-nameAddress__title">Duran Clayton</h6>
+                  <p class="ap-nameAddress__subTitle fs-14 pt-1 m-0">
+                    Sulawesi Selatan
+                  </p>
+                </div>
+                <div
+                  class="ap-button account-profile-cards__button button-group d-flex justify-content-center flex-wrap pt-20"
+                >
+                  <button
+                    type="button"
+                    class="border text-capitalize px-25 color-gray transparent follow radius-md"
+                  >
+                    <span class="las la-user-plus follow-icon"></span>Lihat
+                    Profil
+                  </button>
+                </div>
+              </div>
+
+              <div class="card-footer mt-20 pt-20 pb-20 px-0 bg-transparent">
+                <div
+                  class="profile-overview d-flex justify-content-between flex-wrap"
+                >
+                  <div class="po-details">
+                    <h6 class="po-details__title">120</h6>
+                    <span class="po-details__sTitle">TWK</span>
+                  </div>
+                  <div class="po-details">
+                    <h6 class="po-details__title">140</h6>
+                    <span class="po-details__sTitle">TIU</span>
+                  </div>
+                  <div class="po-details">
+                    <h6 class="po-details__title">182</h6>
+                    <span class="po-details__sTitle">TKP</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Profile Acoount End -->
+        </div>
+        <div class="col-xxl-3 col-lg-4 col-md-6 mb-25">
+          <!-- Profile Acoount -->
+          <div class="card">
+            <div class="card-body text-center pt-30 px-25 pb-0">
+              <div class="account-profile-cards">
+                <div class="ap-img d-flex justify-content-center">
+                  <!-- Profile picture image-->
+                  <img
+                    class="ap-img__main bg-opacity-primary wh-120 rounded-circle mb-3"
+                    src="img/tm1.png"
+                    alt="profile"
+                  />
+                </div>
+                <div class="ap-nameAddress">
+                  <h6 class="ap-nameAddress__title">Duran Clayton</h6>
+                  <p class="ap-nameAddress__subTitle fs-14 pt-1 m-0">
+                    Sulawesi Selatan
+                  </p>
+                </div>
+                <div
+                  class="ap-button account-profile-cards__button button-group d-flex justify-content-center flex-wrap pt-20"
+                >
+                  <button
+                    type="button"
+                    class="border text-capitalize px-25 color-gray transparent follow radius-md"
+                  >
+                    <span class="las la-user-plus follow-icon"></span>Lihat
+                    Profil
+                  </button>
+                </div>
+              </div>
+
+              <div class="card-footer mt-20 pt-20 pb-20 px-0 bg-transparent">
+                <div
+                  class="profile-overview d-flex justify-content-between flex-wrap"
+                >
+                  <div class="po-details">
+                    <h6 class="po-details__title">120</h6>
+                    <span class="po-details__sTitle">TWK</span>
+                  </div>
+                  <div class="po-details">
+                    <h6 class="po-details__title">140</h6>
+                    <span class="po-details__sTitle">TIU</span>
+                  </div>
+                  <div class="po-details">
+                    <h6 class="po-details__title">182</h6>
+                    <span class="po-details__sTitle">TKP</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Profile Acoount End -->
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-lg-12">
           <div
@@ -36,7 +202,7 @@
               class="project-top-left d-flex flex-wrap justify-content-lg-between justify-content-center"
             >
               <div
-                class="project-tap global-shadow order-lg-1 order-2 ms-xl-0 me-xl-20 ms-md-20"
+                class="project-tap global-shadow order-lg-1 order-2 ms-xl-0 me-xl-20"
               >
                 <ul class="nav px-1" id="ap-tab" role="tablist">
                   <li class="nav-item">
